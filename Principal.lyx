@@ -1,0 +1,263 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass IEEEtran
+\begin_preamble
+\usepackage[lined,boxed,commentsnumbered]{algorithm2e}
+
+\addto\captionsspanish{
+\def\tablename{Tabla}
+\def\listtablename{\'Indice de tablas}
+}
+\end_preamble
+\options journal
+\use_default_options false
+\maintain_unincluded_children false
+\language spanish
+\language_package default
+\inputencoding default
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 0
+\use_mathdots 0
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\paperwidth 8.5in
+\paperheight 11in
+\leftmargin 1.69cm
+\topmargin 1.69cm
+\rightmargin 1.69cm
+\bottommargin 1.69cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+
+\lang english
+Optical Multicast With Node Failure Protection.
+ 
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+An Approach Based On MOACO
+\end_layout
+
+\begin_layout Author
+A.
+ Vazquez
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+A.
+ Vazquez Facultad Politécnica, UNA, Paraguay, e-mail:
+\begin_inset CommandInset href
+LatexCommand href
+target "avazquez@pol.una.py"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+, D.
+ Pinto-Roa
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+D.
+ P.
+ Pinto-Roa Facultad Politécnica, UNA, Paraguay, e-mail: 
+\begin_inset CommandInset href
+LatexCommand href
+target "dpinto@pol.una.py"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+, E.
+ Dávalos 
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+E.
+ Dávalos Facultad Politécnica, UNA, Paraguay, e-mail: 
+\begin_inset CommandInset href
+LatexCommand href
+target "edavalo@pol.una.py"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Abstract
+
+\lang english
+In this work we treat the problem of designing a survivable optical network
+ for static multicast traffic, subject to node fails.
+ Given a set of multicast requeriments we propose an algorithm based on
+ MOACO which tries to find the best design of the network, as well as the
+ primary and back-up multicast trees, with protection against node fails.
+ The algorithm simultaneously minimizes the design cost and the maximum
+ optical delay.
+ The experimental results over different instances show the benefits of
+ three protection approaches based on the total or partial network reconfigurati
+on.
+\end_layout
+
+\begin_layout Keywords
+
+\lang american
+optical networks, optical layer multicast, node failure, protection.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "01_introduccion/01_introduccion.lyx"
+
+\end_inset
+
+
+\begin_inset CommandInset include
+LatexCommand input
+filename "02_redes_opticas/02_redes_opticas.lyx"
+
+\end_inset
+
+
+\begin_inset CommandInset include
+LatexCommand input
+filename "04_multicast/04_multicast.lyx"
+
+\end_inset
+
+
+\begin_inset CommandInset include
+LatexCommand input
+filename "03_supervivencia_redes_opticas/03_supervivencia_redes_opticas.lyx"
+
+\end_inset
+
+
+\begin_inset CommandInset include
+LatexCommand input
+filename "05_trabajos_relacionados/05_trabajos_relacionados.lyx"
+
+\end_inset
+
+
+\begin_inset CommandInset include
+LatexCommand input
+filename "06_formulacion_matematica/06_formulacion_matematica.lyx"
+
+\end_inset
+
+
+\begin_inset CommandInset include
+LatexCommand input
+filename "07_colonia_de_hormigas/07_colonia_de_hormigas.lyx"
+
+\end_inset
+
+
+\begin_inset CommandInset include
+LatexCommand input
+filename "08_experimentos/08_experimentos.lyx"
+
+\end_inset
+
+
+\begin_inset CommandInset include
+LatexCommand input
+filename "09_conclusiones/09_conclusiones.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "bibliografia"
+options "plain"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

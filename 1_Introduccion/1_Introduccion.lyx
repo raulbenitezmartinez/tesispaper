@@ -1,0 +1,351 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass IEEEtran
+\options journal
+\use_default_options false
+\maintain_unincluded_children false
+\language spanish
+\language_package default
+\inputencoding utf8
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 0
+\use_mathdots 0
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\paperwidth 8.5in
+\paperheight 11in
+\leftmargin 1.69cm
+\topmargin 1.69cm
+\rightmargin 1.69cm
+\bottommargin 1.69cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Introducción
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+IEEEPARstart
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+E
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+n los 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ últimos años se ha experimentado, en el área de las redes de comunicaciones,
+ un gran crecimiento y evolución en la demanda de información, es decir,
+ en el tráfico del mismo 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "MUR02"
+
+\end_inset
+
+.
+ Los servicios con gran demanda de la última década son los de multimedia,
+ vídeo conferencia y otros.
+ Para hacer frente a estos requerimientos se utilizan redes basadas principalmen
+te en la tecnología de la fibra óptica.
+ Las redes ópticas han evolucionado de manera sustancial en su arquitectura,
+ principalmente por (1) la solución WDM (
+\shape italic
+Wavelength Division Multiplexing
+\shape default
+) que ha expandido la capacidad de la fibra óptica y (2) los dispositivos
+ OXC (
+\shape italic
+Optical Cross Connects
+\shape default
+) con los cuales se logra la escalabilidad de las redes ópticas 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "MUR02,MUK89"
+
+\end_inset
+
+.
+ La tecnología WDM permite a una red óptica transmitir varias transmisiones
+ simultáneamente en una misma fibra óptica sobre distintos canales o longitudes
+ de onda (
+\shape italic
+wavelength
+\shape default
+) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "MUR02"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+La tecnología de fibra óptica es el medio de transporte dominante en el
+ sistema de telecomunicaciones por su gran ventaja en capacidad, confiabilidad,
+ costo y escalabilidad.
+ La característica más atractiva de la transmisión de datos por fibra óptica
+ es su gran potencial a niveles de Tb/s 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "MUK89"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Los servicios de conexión que existen en las redes ópticas más comunes pueden
+ ser punto-a-punto y punto-a-multipunto.
+ Las transmisiones punto-a-multipunto o multicast se encaminan en la red
+ a través de algoritmos de enrutamiento y asignación de longitud de onda
+ MRWA (
+\emph on
+Multicast Routing and Wavelength Assigment
+\emph default
+).
+ El MRWA es un problema NP-completo y tema central de las comunicaciones
+ ópticas 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "XR04"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Con la incorporación de la tecnología WDM que brinda una gran capacidad
+ de transmisión surgen problemas importantes como la capacidad de supervivencia.
+ Al producirse un fallo en una red óptica ésta podría causar una severa
+ pérdida al servicio, debido al gran volumen de información transportada
+ por esta tecnología 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "luekijna2007multicast"
+
+\end_inset
+
+.
+ La supervivencia ante fallas de enlaces y nodos en redes ópticas es fundamental
+ para el éxito de las mismas 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "luekijna2007multicast"
+
+\end_inset
+
+.
+ En particular en este trabajo nos centramos en fallas simples de nodo debido
+ a que son más graves que una falla de enlace 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "BOW03"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+En este trabajo se trata el problema de diseño MRWA 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "BOW03"
+
+\end_inset
+
+ y su protección contra fallas simples de nodo considerando tráfico estático
+ en una arquitectura de red multi-fibra y sin capacidad de conversión.
+ De aquí en más el problema tratado es denominado MRWA-PNF (
+\emph on
+MRWA and Protection against Node Failures
+\emph default
+).
+ Para lograr lo anterior hemos desarrollado un algoritmo multi-objetivo
+ basado en colonias de hormigas o MOACO (
+\emph on
+Multi-Objective Ant Colony Optimization
+\emph default
+) para el cálculo de los árboles ópticos o light-tree primarios y de resguardo
+ respectivo 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "SB03"
+
+\end_inset
+
+.
+ En este contexto, dado un conjunto de solicitudes multicast, el MOACO buscará
+ calcular el mejor conjunto de light-tree primarios y de resguardo que minimice
+ simultáneamente el costo de diseño de red y el retardo máximo sujeto a
+ las restricciones de capa óptica.
+ 
+\end_layout
+
+\begin_layout Standard
+El resto del artículo se organiza de la siguiente manera: en la sección
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:supervivencia"
+
+\end_inset
+
+ se presenta los conceptos de supervivencia en redes ópticas mientras que
+ en la sección 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:multicast"
+
+\end_inset
+
+ se presentan algunos conceptos de enrutamiento multicast.
+ En la sección 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:trabajos"
+
+\end_inset
+
+ de discutirán los trabajos relacionados.
+ La formulación matemática del problema en cuestión es expuesta en la sección
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:formulacion"
+
+\end_inset
+
+.
+ En la sección 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:moaco"
+
+\end_inset
+
+ se presenta brevemente conceptos de MOACO y extensamente la propuesta de
+ este trabajo.
+ Las pruebas experimentales son discutidas en la sección 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:experimentos"
+
+\end_inset
+
+.
+ Finalmente, las conclusiones y trabajos futuros son presentados en la sección
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:conclusiones"
+
+\end_inset
+
+.
+\end_layout
+
+\end_body
+\end_document
