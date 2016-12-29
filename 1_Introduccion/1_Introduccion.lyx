@@ -84,14 +84,25 @@ Introducción
 \end_layout
 
 \begin_layout Standard
-Cita
-\begin_inset CommandInset citation
-LatexCommand cite
-key "CMR13"
-
-\end_inset
-
-
+Hoy en día la competencia existente en los negocios obliga a las empresas
+ a realizar un buen uso de los datos disponibles.
+ Cuando se dispone de muchos datos acerca de los movimientos, clientes y
+ ventas es importante poder convertirla en una información útil que ayude
+ a obtener mejores resultados y por consecuencia mejores beneficios.
+ En las empresas retail o de ventas minoristas uno de los principales problemas
+ con los que se enfrentan es el manejo eficiente del stock de manera a no
+ tener los productos en exceso en los depósitos que incurran en sobrecostos
+ o en el otro extremo la falta de dichos productos, lo cual conlleva a pérdidas
+ de oportunidades de ventas por no disponer del producto que a su vez repercute
+ directamente en las utilidades.
+ El presente trabajo se enfoca en establecer un modelo de estimación de
+ Cantidad de Compra Óptima (CCO) de productos.
+ Para alcanzar el objetivo se utilizan una plataforma de Inteligencia de
+ Negocios (BI) en la cual se modelan los Indicadores Claves de Rendimiento
+ (KPI) que sirven como datos de entrada en los distintos algoritmos de aprendiza
+je automático, donde se evalúa el desempeño a fin de determinar los más
+ adecuados para la creación de un modelo que permita estimar la Cantidad
+ de Compra Óptima (CCO) 
 \end_layout
 
 \end_body
