@@ -76,7 +76,189 @@ Business Intelligence
 \end_layout
 
 \begin_layout Subsection
-Herramientas de Business Intelligence
+Concepto
+\end_layout
+
+\begin_layout Standard
+Business intelligence abarca un conjunto de conceptos, técnicas y herramientas
+ que se utiliza para la transformación de simples datos en información útil
+ y significativa para el análisis de negocios.
+ Las tecnologías de business intelligence son capaces de manejar grandes
+ volúmenes de datos que ayudan a identificar, desarrollar y crear nuevas
+ estrategias de negocios.
+\end_layout
+
+\begin_layout Standard
+El primero que acuñó el término fue Howard Dresner, quién cuando era consultor
+ de Gartner Group lo utilizó para describir un conjunto de conceptos y métodos
+ que mejoran la toma de decisiones, partiendo de la información disponible
+ acerca de los hechos.
+ Entonces, partiendo de la definición del glosario de términos de Gartner
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "GART06"
+
+\end_inset
+
+: 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+Business Intelligence es un proceso interactivo para explorar y analizar
+ información estructurada sobre un área (normalmente almacenada en un datawareho
+use), para descubrir tendencias o patrones, a partir de las cuales derivar
+ ideas y extraer conclusiones.
+ Las áreas incluyen clientes, proveedores, productos, servicios y competidores.
+ El proceso de business intelligence incluye la comunicación de los descubrimien
+tos y efectuar los cambios
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Indica que business intelligence es un proceso que se prolonga en el tiempo,
+ que no es sólo para un momento puntual de la gestión empresarial, en el
+ que podremos ver tendencias, patrones, cambios, variables, etc.
+ Al explorar iremos descubriendo nuevas relaciones que hasta el momento
+ desconocíamos.
+ Al analizar de lo nuevo que hemos descubierto, veremos relaciones entre
+ variables, tendencias, patrones y cuál puede ser la evolución de los mismos.
+\end_layout
+
+\begin_layout Standard
+La información estructurada está en tablas relacionadas, dichas tablas a
+ la vez están en un datawarehouse o almacén de datos.
+ Nos podemos centrar en áreas específicas del negocio y en objetivos concretos
+ como por ejemplo: reducir costes, incrementar ventas, aumentar la participación
+ en el mercado, cumplir los objetivos de ventas presupuestados.
+ Finalmente, lo descubierto y analizado se debe comunicar a aquellas personas
+ en la organización que realizarán los cambios apropiados para mejorar la
+ competitividad
+\end_layout
+
+\begin_layout Standard
+La definición
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Ekerson-Howson"
+
+\end_inset
+
+ que propone The Datawarehouse Institute es:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+Business Intelligence es un término paraguas que abarca los procesos, las
+ herramientas y las tecnologías para convertir datos en información, información
+ en conocimiento y planes para conducir de forma eficaz las actividades
+ de los negocios.
+ BI abarca las tecnologías de datawarehousing, los procesos en el 'back
+ end'
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+
+\emph on
+Los términos “back end” y “front end” comúnmente usados en Sistemas de Informaci
+ón significan, respectivamente, la parte más cercana al área tecnológica
+ y la más cercana a los usuarios.
+ Si hiciéramos un paralelismo con una tienda, serían la “trastienda” y el
+ “mostrador
+\end_layout
+
+\end_inset
+
+, consultas, informes, análisis y las herramientas para mostrar información
+ (estas son las herramientas de BI) y los procesos en el 'front end'
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Objetivos
+\end_layout
+
+\begin_layout Standard
+Según lo expuesto en la definición del término business intelligence podemos
+ decir que tiene los siguientes objetivos principales:
+\end_layout
+
+\begin_layout Itemize
+Convertir datos en información, información en conocimiento y conocimiento
+ en planes operativos o estratégicos.
+\end_layout
+
+\begin_layout Itemize
+Facilitar la disponibilidad de información a los usuarios de negocios, que
+ les ayude a tomar decisiones más rápidamente.
+\end_layout
+
+\begin_layout Itemize
+Apoyar de forma sostenible y continuada a las organizaciones para mejorar
+ su competitividad, ante el entorno de negocios cambiante de forma que puedan
+ adaptarse a él.
+\end_layout
+
+\begin_layout Itemize
+Ante la cantidad de información que va creciendo, disponer de más tiempo
+ en analizarla, en vez de gastar mucho tiempo en prepararla, organizarla
+ y estructurarla.
+\end_layout
+
+\begin_layout Itemize
+Permitir a las organizaciones dirigir de mejor forma, decidir, medir, gestionar
+ y optimizar el alcance de la eficiencia y los resultados financieros.
+\end_layout
+
+\begin_layout Itemize
+Disminuir sustancialmente la incertidumbre que existe ante la toma de decisiones
+ respecto a un plan estratégico.
+\end_layout
+
+\begin_layout Subsection
+Componentes de BI
+\end_layout
+
+\begin_layout Subsubsection
+Fuentes de información
+\end_layout
+
+\begin_layout Subsubsection
+ETL – Proceso de extracción, transformación y carga
+\end_layout
+
+\begin_layout Subsubsection
+Datawarehouse o almacén de datos
+\end_layout
+
+\begin_layout Subsubsection
+Herramientas de business intelligence
+\end_layout
+
+\begin_layout Subsubsection
+Herramientas para BI
 \end_layout
 
 \end_body
