@@ -245,8 +245,140 @@ Componentes de BI
 Fuentes de información
 \end_layout
 
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/fuentes_informacion.png
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Fuentes de información
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Las fuentes de información a las que podemos acceder son:
+\end_layout
+
+\begin_layout Itemize
+Básicamente, de los sistemas operacionales o transaccionales, que incluyen
+ aplicaciones desarrolladas a medida, ERP, CRM, SCM, etc.
+\end_layout
+
+\begin_layout Itemize
+Sistemas de información departamentales: previsiones, presupuestos, hojas
+ de cálculo, etcétera.
+\end_layout
+
+\begin_layout Itemize
+Fuentes de información externa, en algunos casos comprada a terceros, como
+ por ejemplo estudios de mercado (Nielsen en distribución de gran consumo,
+ IMS de la industria farmacéutica).
+ Las fuentes de información externas son fundamentales para enriquecer la
+ información que tenemos de nuestros clientes.
+ En algunos casos es interesante incorporar información referente, por ejemplo,
+ a población, número de habitantes, etc.
+ Podemos acceder a información de este tipo en la web del Instituto Nacional
+ de Estadística (www.
+ ine.es).
+\end_layout
+
+\begin_layout Standard
+Existen muchos factores que contribuyen a la complejidad de cargar la informació
+n en un datawarehouse.
+ Uno de los principales es el número de fuentes de información distintas
+ de las que cargamos la información.
+ Además, el número de fuentes de información varía de una organización a
+ otra: en grandes corporaciones se habla de una media de 8 bases de datos,
+ y en algunos casos puede llegar a 50.
+\end_layout
+
+\begin_layout Standard
+Cada vez más la tecnología nos permite trabajar con información no estructurada,
+ y se espera que este tipo de información sea cada vez más importante.
+ Una encuesta
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Blumberg, R.
+ y S.
+ Atre “The Problem with Unstructured Data”, DM Review, http://dmreview.com/master.
+cfm?NavID=55&EdID=6287 (12 Septiembre 2003)
+\end_layout
+
+\end_inset
+
+ ha indicado que el 60% de los directores de Sistemas de Información y los
+ de Tecnología consideran que la información semiestructurada es crítica
+ para mejorar las operaciones y para la creación de nuevas oportunidades
+ de negocio.
+\end_layout
+
 \begin_layout Subsubsection
 ETL – Proceso de extracción, transformación y carga
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/proceso_ETL.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Proceso ETL
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+asdf
 \end_layout
 
 \begin_layout Subsubsection
