@@ -1,0 +1,180 @@
+﻿CURSO WEKA
+
+
+16/05/2016
+
+* KDD
+* Estándar CRISP-DM (Cross-Industry Standard Process for Data Mining)
+
+* Datos representativos (se asume esto).
+* El modelo no puede ser peor que ZeroR.
+* J48: confidenceFactor, unpruned
+* ZeroR: El arbol que dice que atributos pueden dar una mejor importante.
+
+----------
+
+18/05/2016
+
+TRANSFORMACIONES
+
+* Datos -- Transformaciones -- Modelos -- Evaluación
+* Medir la importancia de cada atributo
+	Select atributes -- GainRatioAtributeEval -- average rank
+	
+NORMALIZACIÓN
+
+* Normalización Min-Max (Normalize es en Weka)
+* Estandarización Z-core
+	- Para detección de outliers
+* Interquartile Range
+	- Outlier factor. En Weka = 3
+	
+FILTER
+
+* NumericToNominal (No supervisado)
+* Discretize (useEqualFrequence)
+
+REGRESIÓN LINEAL
+
+* Mínima Suma de Cuadrados
+* Mínimos Valores Absolutos
+* M, L y S Estimadores
+* Mínima Suma Podada de Cuadrados (Least Trimmed Squares)
+* Mínima Media de Cuadrados (Resiste el efecto cerca del 50 % de contaminación en los datos)
+
+ENTRENAMIENTO
+
+* Construcción de ZeroR (cualquiera por debajo de este se descarta)
+* X=Aprendizaje, Y=Aciertos, Curva: Underfitting, Overfitting
+* Underfitting (modelos más simples)
+* Overffiting (Eliminando atributos, Aumentando la varianza, etc...)
+* Flexibilidad del modelo (El modelo capaz de asumir más estados posibles es más flexible. Por ejemplo: Redes neuronales)
+* Sesgo y Varianza
+* Como evitar overfitting (agregar mas datos, )
+* Se busca evitar overfitting y underfitting (el punto medio)
+* SVM
+* Redes Neuronales
+
+METRICAS PARA COMPARAR MODELOS
+
+* Root mean squared error (Cuanto menor es mejor)
+* LinearRegression (El atributo con mayor valor es el más significativo. 
+Con la opcion M5 automaticamente elimina los atributos menos significativos)
+* SimpleLinearRegression (La variable más significativa debe coincidir con la de LinearRegression)
+
+NaiveBayes supone independencia entre atributos.
+
+REGRESION LOGISTICA
+
+* Predice variables nominales
+* Logistic en Weka
+* Que pasa si un valor es ambiguo, cae en varias etiquetas
+
+TREES MSP
+
+* En las hojas define modelos lineales.
+* Se puede podar (unpruned). Se reducen los nodos drasticamente a veces.
+
+RANDOM TREES
+
+* RandomTrees en Weka.
+* Selecciona aleatoriamente atributos.
+
+RANDOM FOREST
+
+* RandomForest en Weka.
+* Se entrena a partir de Random Trees
+
+J48
+
+* Anteriormente C45.
+* ConfidenceFactor (que tanto se va a podar)
+* Utiliza Entropía para decidir: H = Sumatoria ()
+* Se elige el atributo que mas da ganancia de informacion.
+
+-----------
+
+23/05/2016
+
+CLUSTERING
+
+* k-means
+* k-means++
+* EM
+* k-d Tree
+
+FUZZY CLUSTERING
+
+* Fuzzy C-means
+
+HIERARCHICAL CLUSTERER
+
+* 
+
+LA ELECCIÓN DE K
+
+* k muy grande produce overfitting
+
+METRICAS PARA CLUSTERING
+
+* Log likelihood
+
+------------
+
+25/05/2016
+
+ENSAMBLADORES
+
+* Bagging
+* Boosting (AdaBoostM1)
+
+PARA ELEGIR UN MODELO:
+
+* La cantidad de aciertos. El que tiene mayor.
+* La manejabilidad del modelo. Ej: si un arbol de decision puede servir para visualizar la decision.
+
+CARACTERISTICAS DESEABLES DE UN MODELO:
+
+* Cuanto más datos en el modelo mejor.
+
+FORMAS DE EVALUAR:
+
+* Training-Test: 70% para entrenamiento, 30% para evaluar.
+* Holdout
+* Cross Validation
+* Bootstrap o 0.632 Bootstrap
+
+
+Knuth
+
+SELECCION DE MODELOS
+
+* Principio de Parsimonia
+* Maximum Log-Likelihood (Maxima Verosimilitud L)
+* AIC (Akaike Information Criterion)
+* AIC Corregido
+* BIC
+
+Eficiencia de un modelo
+
+ERRORES
+
+err = Bias + Variance + Error Irreducible (Porcentaje no acertado. Mas bien una funcion de los 3)
+
+Errores irreducibles:
+- Errores de mediciones
+- Erros que el modelo no puede aprender
+- Falta de informacion
+
+Bias + Variance
+- Se pueden reducir
+- Se puede reducir a 0 para una cantidad de datos infinito
+
+"Se busca error pequeño"
+"Se busca sesgo pequeño y varianza pequeña"
+
+Sesgo = Bias: Si puede aprender o no. La media en estadistica. (Precision)
+Varianza = Variance: . La varianza en estadistica. ()
+
+
+
