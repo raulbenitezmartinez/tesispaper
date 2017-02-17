@@ -463,6 +463,7 @@ SMO: Implements John Platt's sequential minimal optimization algorithm for
  models to the outputs of the support vector machine.
  In the multi-class case, the predicted probabilities are coupled using
  Hastie and Tibshirani's pairwise coupling method.
+ 
 \end_layout
 
 \begin_layout Subsubsection
@@ -548,15 +549,60 @@ o.
 \end_layout
 
 \begin_layout Subsubsection
-Cross Validation
+Validación Cruzada (cross-validation): En la validación cruzada, usted decide
+ sobre un número fijo de pliegues, o particiones, de los datos.
+ Supongamos que usamos tres.
+ Luego los datos se dividen en tres particiones aproximadamente iguales;
+ cada uno a su vez se utiliza para las pruebas y el resto se utiliza para
+ el entrenamiento.
+ Es decir, utilizar dos tercios de los datos para el entrenamiento y un
+ tercio para las pruebas, y repetir el procedimiento tres veces para que
+ al final, cada instancia se haya utilizado exactamente una vez para la
+ prueba.
+ Esto se denomina triple validación cruzada, y si la estratificación se
+ adopta también, lo que es a menudo, triple validación cruzada estratificada.
 \end_layout
 
 \begin_layout Subsubsection
-Stratifid k-fold Cross Validation
+Validación Cruzada K-fold Estratificado (stratified k-fold cross validation):
+ La manera estándar de predecir la tasa de error de una técnica de aprendizaje
+ dada una única muestra fija de datos es usar la validación cruzada diez
+ veces estratificada.
+ Los datos se dividen aleatoriamente en 10 partes en las que la clase se
+ representa en aproximadamente las mismas proporciones que en el conjunto
+ de datos completo.
+ Cada parte se extiende a su vez y el esquema de aprendizaje entrenado en
+ los restantes nueve décimos; Entonces su tasa de error se calcula en el
+ conjunto de retención.
+ Así, el procedimiento de aprendizaje se ejecuta un total de 10 veces en
+ diferentes conjuntos de entrenamiento (cada conjunto tiene mucho en común
+ con los demás).
+ Finalmente, las 10 estimaciones de error se promedian para obtener una
+ estimación del error global.
+ Pruebas extensas en numerosos conjuntos de datos diferentes, con diferentes
+ técnicas de aprendizaje, han demostrado que 10 es sobre el número correcto
+ de pliegues para obtener la mejor estimación de error, y también hay algunas
+ pruebas teóricas que apoya esto.
+ Aunque estos argumentos no son en absoluto concluyentes, y el debate continúa
+ enfurecido en los círculos de aprendizaje automático y de minería de datos
+ sobre cuál es el mejor esquema de evaluación, la validación cruzada diez
+ veces se ha convertido en el método estándar en términos prácticos.
+ Las pruebas también han demostrado que el uso de la estratificación mejora
+ ligeramente los resultados.
+ Por lo tanto, la técnica de evaluación estándar en situaciones en las que
+ sólo se dispone de datos limitados es la validación cruzada diez veces
+ estratificada.
+ La estratificación reduce la variación, ciertamente no la elimina completamente.
+ Cuando se busca una estimación exacta del error, es un procedimiento estándar
+ repetir el proceso de validación cruzada 10 veces, es decir, diez veces
+ la validación cruzada diez veces, y el promedio de los resultados.
+ Esto implica invocar el algoritmo de aprendizaje 100 veces en conjuntos
+ de datos que son todas las nueve décimas del tamaño del original.
+ Obtener una buena medida de rendimiento es una empresa de computación intensiva.
 \end_layout
 
 \begin_layout Subsubsection
-Percentage split
+Percentage split: 
 \end_layout
 
 \begin_layout Subsection
@@ -585,6 +631,241 @@ o, que después de todo es por qué podemos usarlo para el entrenamiento.
 La tasa de error en los datos de entrenamiento se llama error de resustitución
  porque se calcula resusstituyendo las instancias de entrenamiento en un
  clasificador que se construyó a partir de ellas.
+ Para predecir el rendimiento de un clasificador en nuevos datos, necesitamos
+ evaluar su tasa de error en un conjunto de datos que no desempeñó ningún
+ papel en la formación del clasificador.
+ Este conjunto de datos independiente se denomina conjunto de pruebas.
+\end_layout
+
+\begin_layout Standard
+En tales situaciones, la gente suele hablar de tres conjuntos de datos:
+ los datos de entrenamiento, los datos de validación y los datos de prueba.
+ Los datos de entrenamiento son utilizados por uno o más esquemas de aprendizaje
+ para conocer clasificadores.
+ Los datos de validación se utilizan para optimizar los parámetros de los
+ clasificadores, o para seleccionar uno determinado.
+ A continuación, los datos de prueba se utilizan para calcular la tasa de
+ error del método final optimizado.
+ Cada uno de los tres conjuntos debe ser independiente: El conjunto de validació
+n debe ser diferente del conjunto de entrenamiento para obtener un buen
+ desempeño en la etapa de optimización o selección y el conjunto de pruebas
+ debe ser diferente de ambos para obtener una estimación confiable de la
+ tasa de error real.
+\end_layout
+
+\begin_layout Standard
+Generalmente, cuanto mayor es la muestra de entrenamiento, mejor es el clasifica
+dor, aunque los retornos comienzan a disminuir una vez que se sobrepasa
+ un cierto volumen de datos de entrenamiento.
+ Y cuanto mayor es la muestra de prueba, más precisa es la estimación del
+ error.
+ La precisión de la estimación del error puede ser cuantificada estadísticamente.
+\end_layout
+
+\begin_layout Standard
+El verdadero problema ocurre cuando no hay una gran cantidad de datos disponible
+s.
+ Las secciones 5.3 y 5.4 revisan métodos ampliamente utilizados para hacer
+ frente a este dilema.
+\end_layout
+
+\begin_layout Standard
+En términos prácticos, es común tener un tercio de los datos para la prueba
+ y utilizar los dos tercios restantes para el entrenamiento.
+\end_layout
+
+\begin_layout Standard
+En general, no se puede saber si una muestra es representativa o no.
+ Pero hay una comprobación simple que puede ser útil: Cada clase en el conjunto
+ de datos completo debe estar representada en la proporción correcta en
+ los conjuntos de entrenamiento y prueba.
+ Deberían estar representados en la proporción adecuada en los conjuntos
+ de entrenamiento y prueba.
+ Si, por mala suerte, todos los ejemplos con una cierta clase se omitieran
+ en el conjunto de entrenamiento, difícilmente podría esperar que una clase
+ aprendiera de esos datos para funcionar bien en los ejemplos de esa clase.
+\end_layout
+
+\begin_layout Standard
+Debe asegurarse de que el muestreo aleatorio se realiza de una manera que
+ garantiza que cada clase esté representada correctamente en los conjuntos
+ de entrenamiento y prueba.
+ Este procedimiento se denomina estratificación, y hablamos de la retención
+ estratificada (stratified holdout).
+ Aunque en general vale la pena hacerlo, la estratificación sólo proporciona
+ una salvaguardia primitiva contra la representación desigual en los conjuntos
+ de entrenamiento y pruebas.
+\end_layout
+
+\begin_layout Standard
+Una manera más general de mitigar cualquier sesgo causado por la muestra
+ particular escogida para retener, es repetir todo el proceso, entrenamiento
+ y prueba, varias veces con diferentes muestras aleatorias.
+ En cada iteración, una cierta proporción, digamos dos tercios, de los datos
+ se selecciona al azar para el entrenamiento, posiblemente con estratificación,
+ y el resto se utiliza para la prueba.
+ Las tasas de error en las diferentes iteraciones se promedian para obtener
+ una tasa de error global.
+ Este es el método de retención repetida de la estimación de la tasa de
+ error.
+\end_layout
+
+\begin_layout Standard
+PARA COMPARAR varios esquemas de aprendizaje automático: Este es un trabajo
+ para una prueba estadística basada en límites de confianza, el tipo que
+ conocimos anteriormente al tratar de predecir el rendimiento real de una
+ determinada tasa de error de prueba.
+ Lo que queremos determinar es si un esquema es mejor o peor que otro en
+ promedio, en todos los posibles conjuntos de datos de entrenamiento y prueba
+ que se pueden extraer del dominio.
+ Debido a que la cantidad de datos de entrenamiento afecta naturalmente
+ el rendimiento, todos los conjuntos de datos deben ser del mismo tamaño.
+ De hecho, el experimento podría repetirse con diferentes tamaños para obtener
+ una curva de aprendizaje.
+ For each learning scheme we can draw several datasets of the same size,
+ obtain an accuracy estimate for each dataset using cross-validation, and
+ compute the mean of the estimates.
+ Each cross-validation experiment yields a different, independent error
+ estimate.
+ What we are interested in is the mean accuracy across all possible datasets
+ of the same size, and whether this mean is greater for one scheme or the
+ other.
+ This is a job for a statistical device known as the T-TEST, or Student’s
+ t-test.
+ Because the same cross-validation experiment can be used for both learning
+ schemes to obtain a matched pair of results for each dataset, a more sensitive
+ version of the t-test known as a paired t-test can be used.
+\end_layout
+
+\begin_layout Standard
+PREDICTING PROBABILITIES: si la predicción está sujeta a un procesamiento
+ ulterior, tal vez involucrando la evaluación de una persona, o un análisis
+ de costos, o tal vez incluso sirviendo como entrada a un proceso de aprendizaje
+ de segundo nivel, entonces puede ser apropiado tomar en cuenta las probabilidad
+es de predicción.
+ QUADRATIC LOSS FUNCTION: The quadratic loss function has some useful theoretica
+l properties that we will nogo into here.
+ For all these reasons, it is frequently used as the criterion of success
+ in probabilistic prediction situations.
+ INFORMATIONAL LOSS FUNCTION: Another popular criterion used to evaluate
+ probabilistic prediction is the informational loss function.
+ DISCUSION: They both do the fundamental job expected of a loss function:
+ They give maximum reward to predictors that are capable of predicting the
+ true probabilities accurately.
+\end_layout
+
+\begin_layout Standard
+CLASIFICACIÓN SENSIBLE A LOS COSTOS o Cost-Sensitive Classifiation: Si los
+ costos son conocidos, pueden ser incorporados en un análisis financiero
+ del proceso de toma de decisiones.
+ En el caso de dos clases, los dos tipos de error-falsos positivos y falsos
+ negativos tendrán costos diferentes; asimismo, los dos tipos de clasificación
+ correcta pueden tener beneficios diferentes.
+ La tabla 5.5 (a) y (b) muestran las matrices de costo por defecto para los
+ casos de dos y tres clases, cuyos valores simplemente dan el número de
+ errores: los costos de clasificación errónea son todos 1.
+ CONCLUSIÓN: Para esta matriz de costos, elegir la predicción con el menor
+ costo esperado es la misma que elegir la que tiene mayor probabilidad.
+ Hemos supuesto que el esquema de aprendizaje genera probabilidades, como
+ lo hace Naïve Bayes.
+ Incluso si normalmente no generan probabilidades, la mayoría de las clasificaci
+ones pueden adaptarse fácilmente para calcularlas.
+ En un árbol de decisión, por ejemplo, la distribución de probabilidad para
+ una instancia de prueba es simplemente la distribución de clases en la
+ hoja correspondiente.
+\end_layout
+
+\begin_layout Standard
+APRENDIZAJE SENSIBLE A LOS COSTOS o Cost-Sensitive Learning: Hemos visto
+ cómo un clasificador, construido sin tener en cuenta los costos, se puede
+ utilizar para hacer predicciones que son sensibles a la matriz de costos.
+ En este caso, los costos se ignoran en el momento del entrenamiento, pero
+ se usan en el momento de la predicción.
+ Una alternativa es hacer exactamente lo contrario: tener en cuenta la matriz
+ de costes durante el proceso de formación e ignorar los costes en el momento
+ de la predicción.
+ En principio, se podría obtener un mejor rendimiento si el clasificador
+ se adaptara por el algoritmo de aprendizaje a la matriz de costes.
+ Variar la proporción de instancias en el conjunto de entrenamiento es una
+ técnica general para la construcción de clasificadores sensibles al costo.
+ Una forma de variar la proporción de instancias de entrenamiento es duplicar
+ instancias en el conjunto de datos.
+ Sin embargo, muchos esquemas de aprendizaje permiten ponderar instancias.
+ (Como mencionamos en la Sección 3.2, esta es una técnica común para manejar
+ valores perdidos.) Los pesos de instancia se inicializan normalmente a 1.
+ Para crear clasificadores sensibles al costo, los pesos se pueden inicializar
+ al costo relativo de los dos tipos de error, falsos positivos y falsos
+ negativos.
+\end_layout
+
+\begin_layout Standard
+GRÁFICOS DE ELEVACIÓN o Lift Charts: La figura 5.2 (a) muestra una visualización
+ que permite explorar diversos escenarios de costos de manera interactiva
+ (denominado analizador coste-beneficio (cost–benefit analyzer), forma parte
+ del banco de trabajo Weka descrito en la Parte III).
+ The graphs show a lift chart on the left and the total cost (or benefi),
+ plotted against the sample size, on the right.
+ At the lower left is a confusion matrix; at the lower right is a cost matrix.
+ Cost or benefi values associated with incorrect or correct classifiations
+ can be entered into the matrix and affect the shape of the curve above.
+ The horizontal slider in the middle allows users to vary the percentage
+ of the population that is selected from the ranked list.
+ Alternatively, one can determine the sample size by adjusting the recall
+ level (the proportion of positives to be included in the sample) or by
+ adjusting a threshold on the probability of the positive class, which here
+ corresponds to a response to the mailout.
+ The total cost or benefi associated with the selected sample size is shown
+ at the lower right, along with the expected response to a random mailout
+ of the same size.
+\end_layout
+
+\begin_layout Standard
+DISCUSIÓN: La gente también busca medidas individuales que caracterizan
+ el desempeño.
+ Dos que se usan en la recuperación de la información son: 
+\begin_inset Quotes eld
+\end_inset
+
+three-point average recall
+\begin_inset Quotes erd
+\end_inset
+
+ y 
+\begin_inset Quotes eld
+\end_inset
+
+11-point average recall
+\begin_inset Quotes erd
+\end_inset
+
+.
+ También se utiliza en la recuperación de información la 
+\begin_inset Quotes eld
+\end_inset
+
+F-measure
+\begin_inset Quotes erd
+\end_inset
+
+: 2 x recall x precision / recall + precision = 2 x TP / 2 x TP + FP + FN.
+ Los médicos, por ejemplo, hablan de la sensibilidad y especificidad (sensitivit
+y and specifiity) de las pruebas de diagnóstico.
+ Sensibilidad se refiere a la proporción de personas con enfermedad que
+ tienen un resultado positivo de la prueba, es decir tp.
+ Especificidad se refiere a la proporción de personas sin enfermedad que
+ tienen un resultado negativo de la prueba, que es 1 - fp.
+ A veces el producto de estos se utiliza como medida general: sensitivity
+ x specificity = tp x (1 - fp) = TP x TN / (TP + FN) x (FP + TN).
+ Para resumir las curvas ROC en una sola cantidad, a veces las personas
+ usan el área bajo la curva (Area Under the Curve o AUC) porque, a grandes
+ rasgos, cuanto mayor es el área, mejor es el modelo.
+ Aunque tales medidas pueden ser útiles si se desconocen los costos y las
+ distribuciones de clases y se debe elegir un esquema para manejar todas
+ las situaciones, ningún número único puede captar la compensación.
+ Esto sólo puede hacerse mediante representaciones bidimensionales tales
+ como gráficos de elevación, curvas ROC y diagramas de precisión-recuerdo
+ (lift charts, ROC curves, and recall–precision diagrams).
+ TABLA 5.7
 \end_layout
 
 \begin_layout Subsubsection
@@ -592,47 +873,124 @@ correct() - number of correctly classified instances (see also incorrect())
 \end_layout
 
 \begin_layout Subsubsection
-pctCorrect() - percentage of correctly classified instances (see also pctIncorre
-ct())
+pctCorrect(.
+ ) - percentage of correctly classified instances (see also pctIncorrect())
 \end_layout
 
 \begin_layout Subsubsection
-kappa() - Kappa statistics
+kappa() - KAPPA STATISTIC: CONTAR EL COSTO o COUNTING THE COST: Las evaluaciones
+ que se han discutido hasta ahora no tienen en cuenta el costo de tomar
+ decisiones equivocadas, clasificaciones erróneas.
+ Otros ejemplos en los que los errores cuestan diferentes cantidades incluyen
+ las decisiones de préstamo: El costo de prestar a un deudor es mucho mayor
+ que el costo de negocio perdido de rechazar un préstamo a un no deudor.
+ Y la detección de mancha de aceite: El costo de no detectar una mancha
+ real que amenaza el medio ambiente es mucho mayor que el costo de una falsa
+ alarma.
+ El costo de identificar malos problemas con una máquina que resulta estar
+ libre de fallas es menor que el costo de pasar por alto los problemas con
+ uno que está a punto de fallar.
+ Los verdaderos positivos (TP) y negativos verdaderos (TN) son clasificaciones
+ correctas.
+ Un falso positivo (PF) es cuando el resultado se predice incorrectamente
+ como sí (o positivo) cuando es realmente no (negativo).
+ Un falso negativo (FN) es cuando el resultado se predice incorrectamente
+ como negativo cuando es realmente positivo.
+ La tasa positiva verdadera es TP dividida por el número total de positivos,
+ que es TP + FN; La tasa de falsos positivos es FP dividida por el número
+ total de negativos, que es FP + TN.
+ La tasa de éxito global es el número de clasificaciones correctas dividido
+ por el número total de clasificaciones: TP +TN/ TP+ TN +FP +FN, por último,
+ la tasa de error es 1 menos esto.
+ En la predicción multiclase, cada elemento de matriz muestra el número
+ de ejemplos de prueba para los que la clase real es la fila y la clase
+ prevista es la columna.
+ Los buenos resultados corresponden a grandes números en la diagonal principal
+ y pequeños, idealmente cero, fuera de los elementos diagonales.
+ Una medida denominada KAPPA STATISTIC tiene en cuenta este factor previsto
+ deduciéndolo de los éxitos del predictor y expresando el resultado como
+ una proporción del total para un predictor perfecto.
+ El valor máximo de Kappa es 100%, y el valor esperado para un predictor
+ aleatorio con los mismos totales de columna es 0.
+ En resumen, la estadística Kappa se utiliza para medir el acuerdo entre
+ categorizaciones predichas y observadas de un conjunto de datos, mientras
+ se corrige un acuerdo que se produce por casualidad.
+ Sin embargo, al igual que la tasa de éxito simple, no toma en cuenta los
+ costos.
 \end_layout
 
 \begin_layout Subsubsection
-meanAbsoluteError() - the mean absolute error
+ROC curves: CURVAS ROC o ROC Curves: Están estrechamente relacionados con
+ una técnica gráfica para evaluar los esquemas de minería de datos conocidos
+ como curvas ROC, que se utilizan en la misma situación, donde el alumno
+ está tratando de seleccionar muestras de instancias de prueba que tienen
+ una alta proporción de positivos.
+ El acrónimo significa la característica de funcionamiento del receptor
+ (Receiver Operating Characteristic), un término usado en la detección de
+ señal para caracterizar la compensación entre la tasa de acierto y la tasa
+ de falsa alarma sobre un canal ruidoso.
+ Representan la tasa de positivos verdaderos en el eje vertical con respecto
+ a la tasa de verdaderos negativos en el eje horizontal.
+ El primero es el número de positivos incluidos en la muestra, expresado
+ como un porcentaje del número total de positivos (TP Rate = 100 × TP/(TP
+ + FN)); el último es el número de negativos incluidos en la muestra, expresado
+ como porcentaje del número total de negativos (FP Rate = 100 × FP/(FP +
+ TN)).
+ El eje vertical es el mismo que el gráfico de elevación excepto que se
+ expresa como un porcentaje.
+ El eje horizontal es ligeramente diferente: es el número de negativos en
+ lugar del tamaño de la muestra.
+ Each point corresponds to drawing a line at a certain position on the ranked
+ list, counting the yes’s and no’s above it, and plotting them vertically
+ and horizontally, respectively.
+ Esto es sólo una forma de usar la validación cruzada para generar curvas
+ ROC.
+ Un enfoque más simple es recopilar las probabilidades predichas para todos
+ los conjuntos de prueba diferentes (de los cuales hay 10 en un 10-fold
+ validación cruzada), junto con las etiquetas de clase verdadera de las
+ instancias correspondientes, y generar una única lista rankeada basada
+ en estos datos.
+ Si el esquema de aprendizaje no permite ordenar las instancias, primero
+ puede hacer que sea sensible al costo como se describió anteriormente.
+ Para cada fold de una 10-fold validación cruzada, ponderar las instancias
+ para una selección de diferentes ratios de coste, entrenar el esquema en
+ cada conjunto ponderado, contar los verdaderos positivos y falsos positivos
+ en el conjunto de pruebas y trazar el punto resultante en los ejes ROC
+ .
 \end_layout
 
 \begin_layout Subsubsection
-rootMeanSquaredError() - the root mean squared error
-\end_layout
-
-\begin_layout Subsubsection
-unclassified() - number of unclassified instances
-\end_layout
-
-\begin_layout Subsubsection
-pctUnclassified() - percentage of unclassified instances
-\end_layout
-
-\begin_layout Subsubsection
-ROC curves
+RECALL-PRECISION CURVES: La gente ha lidiado con la compensación fundamental
+ ilustrada por los gráficos de elevación y las curvas ROC en una amplia
+ variedad de dominios.
+ Comparar un sistema que localiza 100 documentos, 40 de los cuales son relevante
+s, con otro que localiza 400 documentos, 80 de los cuales son relevantes.
+ ¿Cual es mejor? La respuesta ahora debe ser obvia: depende del costo relativo
+ de falsos positivos, documentos devueltos que no sean relevantes, y falsos
+ negativos, documentos que son relevantes pero que no se devuelven.
+ Los investigadores de recuperación de información definen parámetros llamados
+ recall y precisión: RECALL = number of documents retrieved that are relevant
+ / total number of documents that are relevant.
+ PRECISION: number of documents retrieved that are relevant / total number
+ of documents that are retrieved.
+ Los expertos en recuperación de información usan curvas recall-precision
+ que trazan una contra la otra, para diferentes números de documentos recuperado
+s de la misma manera que las curvas ROC y los gráficos de elevación, excepto
+ que debido a que los ejes son diferentes, las curvas son de forma hiperbólica
+ y el punto de operación deseado está hacia la parte superior derecha.
+ Table 5.7 summarizes the three different ways introduced for evaluating
+ the same basic tradeoff; TP, FP, TN, and FN are the numbers of true positives,
+ false positives, true negatives, and false negatives, respectively.
+ Diferentes técnicas dan diferentes compensaciones, y se pueden trazar como
+ líneas diferentes en cualquiera de estas gráficas.
 \end_layout
 
 \begin_layout Subsubsection
 Tasa de error (error rate): on the testing data.
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset bibtex
-LatexCommand bibtex
-bibfiles "C:/Users/Tecnologia/Documents/GitHub/tesispaper/BibliografiaPaper"
-options "plain"
-
-\end_inset
-
-
+ Predecir la tasa de error.
+ Tenfold cross-validation is the standard way of measuring the error rate
+ of a learning scheme on a particular dataset.
+ The basic quality measure offered by the error rate is longer appropriate.
 \end_layout
 
 \end_body
