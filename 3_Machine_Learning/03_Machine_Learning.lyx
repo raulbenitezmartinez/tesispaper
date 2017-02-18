@@ -738,12 +738,12 @@ PARA COMPARAR varios esquemas de aprendizaje automático: Este es un trabajo
 \end_layout
 
 \begin_layout Subsubsection
-correct() - number of correctly classified instances (see also incorrect())
+correct() - number of correctly classified instances.
 \end_layout
 
 \begin_layout Subsubsection
 pctCorrect(.
- ) - percentage of correctly classified instances (see also pctIncorrect())
+ ) - percentage of correctly classified instances.
 \end_layout
 
 \begin_layout Subsubsection

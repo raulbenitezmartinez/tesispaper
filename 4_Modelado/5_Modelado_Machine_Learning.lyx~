@@ -1,0 +1,361 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass IEEEtran
+\begin_preamble
+% Bibliografia en español
+\usepackage[fixlanguage]{babelbib}
+\selectbiblanguage{spanish}
+
+% Bibliografia
+\usepackage[authoryear,square,sort]{natbib}
+\bibliographystyle{plainnat}
+\bibpunct{[}{]}{,}{a}{}{;}
+\renewcommand\cite{\citep}
+\end_preamble
+\options journal
+\use_default_options true
+\maintain_unincluded_children false
+\language spanish
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command bibtex
+\index_command default
+\paperfontsize 12
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2.5cm
+\topmargin 2.5cm
+\rightmargin 1.5cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Modelado del Aprendizaje Automático
+\end_layout
+
+\begin_layout Standard
+Se describirá cómo se procesarán los datos proveídos por business intelligence.
+\end_layout
+
+\begin_layout Subsection
+Introducción al modelado del aprendizaje automático
+\end_layout
+
+\begin_layout Standard
+Para el problema de estudio.
+\end_layout
+
+\begin_layout Subsection
+Datos proveídos por business intelligence
+\end_layout
+
+\begin_layout Standard
+Esta tabla 34 filas.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Recursos/5_mensual.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tabla de ejemplo que corresponde a métricas BI mensuales sobre las ventas
+ de un producto.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Esta tabla 68 filas.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Recursos/5_quincenal.png
+	scale 45
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tabla de ejemplo que corresponde a métricas BI quincenales sobre las ventas
+ de un producto.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Esta tabla 151 filas.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Recursos/5_semanal.png
+	scale 45
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tabla de ejemplo que corresponde a métricas BI semanales sobre las ventas
+ de un producto.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Esquema del procesamiento de las instancias
+\end_layout
+
+\begin_layout Standard
+Se dispone de tres directorios, un directorio con los resultados de business
+ intelligence de la venta de productos considerando periodos mensuales (un
+ archivo por cada producto), otro directorio considerando periodos quincenales
+ (un archivo por cada producto) y por último un directorio considerando
+ periodos semanales (un archivo por cada producto).
+\end_layout
+
+\begin_layout Standard
+Por cada archivo, se entrenan y se evaluan las instancias que corresponden
+ a un producto en cuestión, con todos los algoritmos de clasificación posibles.
+\end_layout
+
+\begin_layout Standard
+Las métricas de evaluación se almacenan en tres planillas, una planilla
+ con los resultados de evaluación del aprendizaje automático para los periodos
+ mensuales, otra planilla para los periodos quincenales y una última para
+ los periodos semanales.
+\end_layout
+
+\begin_layout Subsection
+Entrenamiento y evaluación de las instancias
+\end_layout
+
+\begin_layout Standard
+Clasificadores WEKA.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Recursos/clasificadores WEKA.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Clasificadores WEKA utilizados en la implementeación.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Entrenamiento y evaluación en WEKA.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Recursos/construir y evaluar clasificadores WEKA.png
+	scale 45
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Esquema de entrenamiento y evaluación en WEKA.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Métricas de los resultados de la evaluación
+\end_layout
+
+\begin_layout Standard
+Métricas de evaluación en WEKA.
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_body
+\end_document

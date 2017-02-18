@@ -737,137 +737,6 @@ PARA COMPARAR varios esquemas de aprendizaje automático: Este es un trabajo
  version of the t-test known as a paired t-test can be used.
 \end_layout
 
-\begin_layout Standard
-PREDICTING PROBABILITIES: si la predicción está sujeta a un procesamiento
- ulterior, tal vez involucrando la evaluación de una persona, o un análisis
- de costos, o tal vez incluso sirviendo como entrada a un proceso de aprendizaje
- de segundo nivel, entonces puede ser apropiado tomar en cuenta las probabilidad
-es de predicción.
- QUADRATIC LOSS FUNCTION: The quadratic loss function has some useful theoretica
-l properties that we will nogo into here.
- For all these reasons, it is frequently used as the criterion of success
- in probabilistic prediction situations.
- INFORMATIONAL LOSS FUNCTION: Another popular criterion used to evaluate
- probabilistic prediction is the informational loss function.
- DISCUSION: They both do the fundamental job expected of a loss function:
- They give maximum reward to predictors that are capable of predicting the
- true probabilities accurately.
-\end_layout
-
-\begin_layout Standard
-CLASIFICACIÓN SENSIBLE A LOS COSTOS o Cost-Sensitive Classifiation: Si los
- costos son conocidos, pueden ser incorporados en un análisis financiero
- del proceso de toma de decisiones.
- En el caso de dos clases, los dos tipos de error-falsos positivos y falsos
- negativos tendrán costos diferentes; asimismo, los dos tipos de clasificación
- correcta pueden tener beneficios diferentes.
- La tabla 5.5 (a) y (b) muestran las matrices de costo por defecto para los
- casos de dos y tres clases, cuyos valores simplemente dan el número de
- errores: los costos de clasificación errónea son todos 1.
- CONCLUSIÓN: Para esta matriz de costos, elegir la predicción con el menor
- costo esperado es la misma que elegir la que tiene mayor probabilidad.
- Hemos supuesto que el esquema de aprendizaje genera probabilidades, como
- lo hace Naïve Bayes.
- Incluso si normalmente no generan probabilidades, la mayoría de las clasificaci
-ones pueden adaptarse fácilmente para calcularlas.
- En un árbol de decisión, por ejemplo, la distribución de probabilidad para
- una instancia de prueba es simplemente la distribución de clases en la
- hoja correspondiente.
-\end_layout
-
-\begin_layout Standard
-APRENDIZAJE SENSIBLE A LOS COSTOS o Cost-Sensitive Learning: Hemos visto
- cómo un clasificador, construido sin tener en cuenta los costos, se puede
- utilizar para hacer predicciones que son sensibles a la matriz de costos.
- En este caso, los costos se ignoran en el momento del entrenamiento, pero
- se usan en el momento de la predicción.
- Una alternativa es hacer exactamente lo contrario: tener en cuenta la matriz
- de costes durante el proceso de formación e ignorar los costes en el momento
- de la predicción.
- En principio, se podría obtener un mejor rendimiento si el clasificador
- se adaptara por el algoritmo de aprendizaje a la matriz de costes.
- Variar la proporción de instancias en el conjunto de entrenamiento es una
- técnica general para la construcción de clasificadores sensibles al costo.
- Una forma de variar la proporción de instancias de entrenamiento es duplicar
- instancias en el conjunto de datos.
- Sin embargo, muchos esquemas de aprendizaje permiten ponderar instancias.
- (Como mencionamos en la Sección 3.2, esta es una técnica común para manejar
- valores perdidos.) Los pesos de instancia se inicializan normalmente a 1.
- Para crear clasificadores sensibles al costo, los pesos se pueden inicializar
- al costo relativo de los dos tipos de error, falsos positivos y falsos
- negativos.
-\end_layout
-
-\begin_layout Standard
-GRÁFICOS DE ELEVACIÓN o Lift Charts: La figura 5.2 (a) muestra una visualización
- que permite explorar diversos escenarios de costos de manera interactiva
- (denominado analizador coste-beneficio (cost–benefit analyzer), forma parte
- del banco de trabajo Weka descrito en la Parte III).
- The graphs show a lift chart on the left and the total cost (or benefi),
- plotted against the sample size, on the right.
- At the lower left is a confusion matrix; at the lower right is a cost matrix.
- Cost or benefi values associated with incorrect or correct classifiations
- can be entered into the matrix and affect the shape of the curve above.
- The horizontal slider in the middle allows users to vary the percentage
- of the population that is selected from the ranked list.
- Alternatively, one can determine the sample size by adjusting the recall
- level (the proportion of positives to be included in the sample) or by
- adjusting a threshold on the probability of the positive class, which here
- corresponds to a response to the mailout.
- The total cost or benefi associated with the selected sample size is shown
- at the lower right, along with the expected response to a random mailout
- of the same size.
-\end_layout
-
-\begin_layout Standard
-DISCUSIÓN: La gente también busca medidas individuales que caracterizan
- el desempeño.
- Dos que se usan en la recuperación de la información son: 
-\begin_inset Quotes eld
-\end_inset
-
-three-point average recall
-\begin_inset Quotes erd
-\end_inset
-
- y 
-\begin_inset Quotes eld
-\end_inset
-
-11-point average recall
-\begin_inset Quotes erd
-\end_inset
-
-.
- También se utiliza en la recuperación de información la 
-\begin_inset Quotes eld
-\end_inset
-
-F-measure
-\begin_inset Quotes erd
-\end_inset
-
-: 2 x recall x precision / recall + precision = 2 x TP / 2 x TP + FP + FN.
- Los médicos, por ejemplo, hablan de la sensibilidad y especificidad (sensitivit
-y and specifiity) de las pruebas de diagnóstico.
- Sensibilidad se refiere a la proporción de personas con enfermedad que
- tienen un resultado positivo de la prueba, es decir tp.
- Especificidad se refiere a la proporción de personas sin enfermedad que
- tienen un resultado negativo de la prueba, que es 1 - fp.
- A veces el producto de estos se utiliza como medida general: sensitivity
- x specificity = tp x (1 - fp) = TP x TN / (TP + FN) x (FP + TN).
- Para resumir las curvas ROC en una sola cantidad, a veces las personas
- usan el área bajo la curva (Area Under the Curve o AUC) porque, a grandes
- rasgos, cuanto mayor es el área, mejor es el modelo.
- Aunque tales medidas pueden ser útiles si se desconocen los costos y las
- distribuciones de clases y se debe elegir un esquema para manejar todas
- las situaciones, ningún número único puede captar la compensación.
- Esto sólo puede hacerse mediante representaciones bidimensionales tales
- como gráficos de elevación, curvas ROC y diagramas de precisión-recuerdo
- (lift charts, ROC curves, and recall–precision diagrams).
- TABLA 5.7
-\end_layout
-
 \begin_layout Subsubsection
 correct() - number of correctly classified instances (see also incorrect())
 \end_layout
@@ -983,6 +852,7 @@ s de la misma manera que las curvas ROC y los gráficos de elevación, excepto
  false positives, true negatives, and false negatives, respectively.
  Diferentes técnicas dan diferentes compensaciones, y se pueden trazar como
  líneas diferentes en cualquiera de estas gráficas.
+ TABLA 5.7
 \end_layout
 
 \begin_layout Subsubsection
