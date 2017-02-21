@@ -92,7 +92,15 @@ Modelado del Aprendizaje Automático
 \end_layout
 
 \begin_layout Standard
-Se describirá cómo se procesarán los datos proveídos por business intelligence.
+Se describirá cómo es la implementación del proceso de aprendizaje automático
+ para este caso de estudio.
+ Se mostrará primeramente cómo está constituída la salida del proceso de
+ business intelligence, que en esencia proveen las instancias necesarias
+ para la entrada del proceso de aprendizaje automático.
+ También se verá qué clasificadores WEKA fueron utilizados, cómo se realizó
+ el paso de entrenamiento y de evaluación, y cuáles son las métricas de
+ evaluación consideradas para medir el rendimiento de los clasificadores.
+ 
 \end_layout
 
 \begin_layout Subsection
@@ -108,7 +116,23 @@ Datos proveídos por business intelligence
 \end_layout
 
 \begin_layout Standard
-Esta tabla 34 filas.
+La salida de business intelligence se constituye de archivos CSV que podemos
+ expresar como se muestran en la Figura 1, Figura 2 y Figura 3.
+ 
+\end_layout
+
+\begin_layout Standard
+La Figura 1 es una porción de un archivo CSV que contiene la salida de business
+ intelligence calculada sobre las ventas mensuales de un determinado producto.
+ Hay 812 productos diferentes analizados lo que equivale a 812 archivos
+ CSV.
+ En realidad la tabla de la Figura 1 tiene 34 filas sin incluir el encabezado
+ lo que corresponde directamente a 34 instancias o ejemplos.
+ Entonces, por cada producto analizado tenemos disponibles 34 instancias.
+ La última columna es la clase de cada instancia, una columna etiquetada
+ de valores discretos.
+ Todas las anteriores columnas constituyen el conjunto de características
+ o atributos de las instancias.
 \end_layout
 
 \begin_layout Standard
@@ -148,7 +172,17 @@ Tabla de ejemplo que corresponde a métricas BI mensuales sobre las ventas
 \end_layout
 
 \begin_layout Standard
-Esta tabla 68 filas.
+La Figura 2 es una porción de un archivo CSV que contiene la salida de business
+ intelligence calculada sobre las ventas quincenales de un determinado producto.
+ Hay 808 productos diferentes analizados lo que equivale a 808 archivos
+ CSV.
+ En realidad la tabla de la Figura 2 tiene 68 filas sin incluir el encabezado
+ lo que corresponde directamente a 68 instancias o ejemplos.
+ Entonces, por cada producto analizado tenemos disponible 68 instancias.
+ La última columna es la clase de cada instancia, una columna etiquetada
+ de valores discretos.
+ Todas las anteriores columnas constituyen el conjunto de características
+ o atributos de las instancias.
 \end_layout
 
 \begin_layout Standard
@@ -191,7 +225,17 @@ Tabla de ejemplo que corresponde a métricas BI quincenales sobre las ventas
 \end_layout
 
 \begin_layout Standard
-Esta tabla 151 filas.
+La Figura 3 es una porción de un archivo CSV que contiene la salida de business
+ intelligence calculada sobre las ventas semanales de un determinado producto.
+ Hay 796 productos diferentes analizados lo que equivale a 796 archivos
+ CSV.
+ En realidad la tabla de la Figura 3 tiene 151 filas sin incluir el encabezado
+ lo que corresponde directamente a 151 instancias o ejemplos.
+ Entonces, por cada producto analizado tenemos disponible 151 instancias.
+ La última columna es la clase de cada instancia, una columna etiquetada
+ de valores discretos.
+ Todas las anteriores columnas constituyen el conjunto de características
+ o atributos de las instancias.
 \end_layout
 
 \begin_layout Standard
@@ -238,23 +282,23 @@ Esquema del procesamiento de las instancias
 \end_layout
 
 \begin_layout Standard
-Se dispone de tres directorios, un directorio con los resultados de business
- intelligence de la venta de productos considerando periodos mensuales (un
- archivo por cada producto), otro directorio considerando periodos quincenales
- (un archivo por cada producto) y por último un directorio considerando
- periodos semanales (un archivo por cada producto).
+Se debe recorrer todo el conjunto de archivos CSV, tanto los archivos que
+ contienen instancias referentes a BI mensuales, los que contienen instancias
+ referentes a BI quincenales y los que contienen instancias referentes a
+ BI semanales.
+ 
 \end_layout
 
 \begin_layout Standard
-Por cada archivo, se entrenan y se evaluan las instancias que corresponden
- a un producto en cuestión, con todos los algoritmos de clasificación posibles.
-\end_layout
-
-\begin_layout Standard
-Las métricas de evaluación se almacenan en tres planillas, una planilla
- con los resultados de evaluación del aprendizaje automático para los periodos
- mensuales, otra planilla para los periodos quincenales y una última para
- los periodos semanales.
+Luego, cada archivo de instancias se entrena con todos los algoritmos de
+ clasificación WEKA posibles y la evaluación se hace tanto por el método
+ Percentage Split así como por el método Stratified K-fold Cross Validation.
+ Finalmente las métricas de evaluación se almacenan en tres tablas, una
+ tabla con los resultados de evaluación del aprendizaje automático para
+ los periodos mensuales, otra tabla para los periodos quincenales y una
+ última tabla para los periodos semanales.
+ Hacia el final del capítulo se muestran ejemplos de estas tablas y en el
+ siguiente capítulo se analizan los resultados que contienen.
 \end_layout
 
 \begin_layout Subsection
@@ -262,7 +306,10 @@ Entrenamiento y evaluación de las instancias
 \end_layout
 
 \begin_layout Standard
-Clasificadores WEKA.
+En la Figura 4 se muestra el conjunto de clasificadores WEKA utilizados
+ durante el procesamiento de cada archide vo CSV.
+ A su vez estos clasificadores se pueden sub dividir en basesianos, basados
+ en funciones, reglas y árboles.
 \end_layout
 
 \begin_layout Standard
@@ -270,7 +317,7 @@ Clasificadores WEKA.
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -294,17 +341,25 @@ Clasificadores WEKA utilizados en la implementeación.
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-Entrenamiento y evaluación en WEKA.
+En la Figura 5 se muestra un fragmento del algoritmo que realiza el entrenamient
+o y la evaluación con la API de WEKA.
+ Los 
+\begin_inset Quotes eld
+\end_inset
+
+modelos
+\begin_inset Quotes erd
+\end_inset
+
+ constituyen los algoritmos de clasificación, así que cada modelo se puede
+ evaluar por Percentage Split o por Stratified K-fold Cross Validation.
+ Para esta tesis evaluamos por ambos métodos.
 \end_layout
 
 \begin_layout Standard
@@ -350,7 +405,13 @@ Métricas de los resultados de la evaluación
 \end_layout
 
 \begin_layout Standard
-Métricas de evaluación en WEKA.
+En la Figura 6 se muestra qué métricas de evaluación son obtenidas de la
+ API WEKA.
+ Entonces por cada modelo procesado, luego de construir su clasificador
+ y evaluarlo se obtienen las métricas Cantidad de Aciertos o el Porcentaje
+ de Acierto, la estadística Kappa; y por cada clase (Nada, Medio, Mucho)
+ se obtienen las métricas Area Under ROC, Recall, Precision, F-Measure y
+ Area Under Precision-Recall Curve (AUPRC).
 \end_layout
 
 \begin_layout Standard
@@ -358,7 +419,7 @@ Métricas de evaluación en WEKA.
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -385,6 +446,10 @@ Esquema de obtención de las métricas de evaluación en WEKA.
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsection
+Tablas de resultado de las métricas de evaluación
 \end_layout
 
 \end_body

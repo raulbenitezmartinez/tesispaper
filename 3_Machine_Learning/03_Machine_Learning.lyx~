@@ -738,12 +738,11 @@ PARA COMPARAR varios esquemas de aprendizaje automático: Este es un trabajo
 \end_layout
 
 \begin_layout Subsubsection
-correct() - number of correctly classified instances (see also incorrect())
+correct() - number of correctly classified instances.
 \end_layout
 
 \begin_layout Subsubsection
-pctCorrect(.
- ) - percentage of correctly classified instances (see also pctIncorrect())
+pctCorrect() - percentage of correctly classified instances.
 \end_layout
 
 \begin_layout Subsubsection
@@ -789,11 +788,11 @@ kappa() - KAPPA STATISTIC: CONTAR EL COSTO o COUNTING THE COST: Las evaluaciones
 \end_layout
 
 \begin_layout Subsubsection
-ROC curves: CURVAS ROC o ROC Curves: Están estrechamente relacionados con
- una técnica gráfica para evaluar los esquemas de minería de datos conocidos
- como curvas ROC, que se utilizan en la misma situación, donde el alumno
- está tratando de seleccionar muestras de instancias de prueba que tienen
- una alta proporción de positivos.
+areaUnderROC(int classIndex) - CURVAS ROC o ROC Curves: Están estrechamente
+ relacionados con una técnica gráfica para evaluar los esquemas de minería
+ de datos conocidos como curvas ROC, que se utilizan en la misma situación,
+ donde el alumno está tratando de seleccionar muestras de instancias de
+ prueba que tienen una alta proporción de positivos.
  El acrónimo significa la característica de funcionamiento del receptor
  (Receiver Operating Characteristic), un término usado en la detección de
  señal para caracterizar la compensación entre la tasa de acierto y la tasa
@@ -829,9 +828,9 @@ ROC curves: CURVAS ROC o ROC Curves: Están estrechamente relacionados con
 \end_layout
 
 \begin_layout Subsubsection
-RECALL-PRECISION CURVES: La gente ha lidiado con la compensación fundamental
- ilustrada por los gráficos de elevación y las curvas ROC en una amplia
- variedad de dominios.
+recall(int classIndex) y precision(int classIndex) - RECALL-PRECISION CURVES:
+ La gente ha lidiado con la compensación fundamental ilustrada por los gráficos
+ de elevación y las curvas ROC en una amplia variedad de dominios.
  Comparar un sistema que localiza 100 documentos, 40 de los cuales son relevante
 s, con otro que localiza 400 documentos, 80 de los cuales son relevantes.
  ¿Cual es mejor? La respuesta ahora debe ser obvia: depende del costo relativo
