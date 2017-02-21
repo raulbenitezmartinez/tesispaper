@@ -72,7 +72,305 @@
 \begin_body
 
 \begin_layout Section
+Modelado mediante la utilización de KPI
+\end_layout
 
+\begin_layout Standard
+Esta sección se enfoca y analiza uno de los principales problemas con los
+ que se enfrentan las empresas retail
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Una empresa retail es cualquier comercio que vende sus productos al consumidor
+ final, desde un supermercado a una tienda de barrio, desde un negocio de
+ electrodomésticos a una franquicia textil, ya sea con cientos de puntos
+ de venta o con un solo establecimiento.
+\end_layout
+
+\end_inset
+
+, la cual trata acerca de la reposición de stock
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Stock o existencia es la cantidad de un determinado producto almacenado
+ o disponible para la venta.
+ 
+\end_layout
+
+\end_inset
+
+, es decir, determinar la cantidad de productos que se deben comprar para
+ satisfacer la demanda de los clientes por un determinado periodo de tiempo.
+ Utilizando los conceptos y herramientas de bussines intelligence mencionados
+ en el capitulo 2, se define y se diseña el datawarehouse donde son almacenados
+ los datos históricos de las compras y ventas de la empresa retail que servirán
+ para el análisis, posteriormente se definen los indicadores claves de rendimien
+to como métricas que son utilizados como datos de entrada en las herramientas
+ de aprendizaje automático para crear un modelo para la predicción de la
+ cantidad óptima que debe comprarse para la reposision del stock y así cubrir
+ la demanda de productos de los clientes.
+ 
+\end_layout
+
+\begin_layout Subsection
+Problema de la reposición de stock
+\end_layout
+
+\begin_layout Standard
+LLamamos stocks o existencias de una empresa al conjunto de materiales y
+ artículos que se almacenan, tanto aquellos que son necesarios para el proceso
+ productivo como los destinados a la venta.
+ 
+\end_layout
+
+\begin_layout Standard
+Es importante mantener un stock adecuado de los productos para garantizar
+ la demanda de los clientes pero cuidando que su almacenamiento resulte
+ rentable.Tener un stock insuficiente puede acarrear consigo un serie de
+ inconvenientes como: pérdida de ventas, pérdida de imagen y pérdida de
+ la confianza de los clientes.
+ Por otra parte, se debe tener cuidado con tener un stock excesivo, ya que
+ podría incurrir en mayores costes de almacenamiento y repercutir en el
+ precio de venta final.
+ 
+\end_layout
+
+\begin_layout Subparagraph
+De esto surgen las siguientes interrogantes:
+\end_layout
+
+\begin_layout Itemize
+¿Cuando debemos realizar un pedido?
+\end_layout
+
+\begin_layout Itemize
+¿Qué cantidad debemos hacer el pedido?
+\end_layout
+
+\begin_layout Standard
+En nuestro medio en numerosas ocaciones el determinar cuando se debe realizar
+ un pedido y la cantidad que se precisa comprar se realiza en forma empírica
+ mediante una revisión de las cantidad vendida en el último periodo y un
+ conteo rápido de la cantidad existente actualmente.
+\end_layout
+
+\begin_layout Subsection
+Base de datos
+\end_layout
+
+\begin_layout Standard
+Para el presente trabajo, la base de datos utilizada corresponde a una base
+ de datos auténtica con los registros de productos, proveedores, movimientos
+ de compras, ventas y registro de stock actual realizados por una empresa
+ retail.
+\end_layout
+
+\begin_layout Subsubsection*
+Tabla de Productos
+\end_layout
+
+\begin_layout Standard
+La empresa retail cuenta con 13.200 articulos registrados disponibles para
+ la venta.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/tabla_productos.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Productos.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Tabla Proveedores
+\end_layout
+
+\begin_layout Standard
+La empresa contiene una base de 1.623 proveedores registrados.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/tabla_proveedores.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Proveedores.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Tabla de Ventas Cabecera
+\end_layout
+
+\begin_layout Standard
+La tabla de ventas cabecera es una de las tablas principales donde se registran
+ los movimientos de ventas de la empresa retail, la tabla contiene 301.316
+ registros de ventas durante un periodo de 4 años, desde el 07/11/2013 hasta
+ el 04/10/16.
+ Contiene datos de la fecha, numero de factura, cliente, montos totales
+ entre otros datos.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/tabla_cabecera.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tabla de Ventas Cabecera.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Tabla de Ventas Detalle
+\end_layout
+
+\begin_layout Standard
+La tabla de ventas detalle contiene los registros de los productos que fueron
+ comercializados, cada detalle esta relacionado a un registro cabecera.
+ La tabla contiene 981.402 registros de productos que fueron vendidos en
+ el mismo periodo indicado en el punto anterior.
+ Contiene datos de la fecha, el producto vendido, precio de costo, precio
+ de venta, cantidad, porcentaje de impuesto y otros datos.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/tabla_detalles.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tabla de Ventas Detalle.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Dataware
+\end_layout
+
+\begin_layout Standard
+aca hablar del diseño del dataware, hacer un pequelo esquema DER del dataware,
+ del esquema estrella de los cubos.
+\end_layout
+
+\begin_layout Subsection
+Definición de los KPI
+\end_layout
+
+\begin_layout Standard
+Listar los kpis tenidos en cuenta para el modelado del negocio
 \end_layout
 
 \end_body
