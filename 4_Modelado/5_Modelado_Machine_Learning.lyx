@@ -293,12 +293,14 @@ Se debe recorrer todo el conjunto de archivos CSV, tanto los archivos que
 Luego, cada archivo de instancias se entrena con todos los algoritmos de
  clasificación WEKA posibles y la evaluación se hace tanto por el método
  Percentage Split así como por el método Stratified K-fold Cross Validation.
- Finalmente las métricas de evaluación se almacenan en tres tablas, una
- tabla con los resultados de evaluación del aprendizaje automático para
- los periodos mensuales, otra tabla para los periodos quincenales y una
- última tabla para los periodos semanales.
+ Finalmente las métricas de evaluación se almacenan en dos tablas; una tabla
+ con los resultados de evaluación del aprendizaje automático con el método
+ Percentage Split para los periodos mensuales, quincenales y semanales;
+ y otra tabla con los resultados de evaluación del aprendizaje automático
+ con el método Stratified K-fold Cross Validation para los periodos mensuales,
+ quincenales y semanales.
  Hacia el final del capítulo se muestran ejemplos de estas tablas y en el
- siguiente capítulo se analizan los resultados que contienen.
+ siguiente capítulo se analiza el significado de los resultados que contienen.
 \end_layout
 
 \begin_layout Subsection
@@ -453,18 +455,28 @@ Tablas de resultado de las métricas de evaluación
 \end_layout
 
 \begin_layout Standard
-Split mensual.
+Se muestran tablas de ejemplo que contienen los resultados de las métricas
+ de evaluación.
+ Como se mencionó en la sub sección 1.3, hay dos tablas que se generan al
+ concluir el proceso de aprendizaje automático.
+\end_layout
+
+\begin_layout Standard
+En la Figura 7 se muestra una pequeña parte de la tabla con los resultados
+ de evaluación del aprendizaje automático con el método Percentage Split
+ para los periodos mensuales, quincenales y semanales.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename Recursos/split_mensual.png
+	filename Recursos/split_sintetico.png
 	scale 30
 
 \end_inset
@@ -476,7 +488,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Split mensual
+Resultados de la evaluación del aprendizaje automático con el método Percentage
+ Split.
 \end_layout
 
 \end_inset
@@ -490,18 +503,21 @@ Split mensual
 \end_layout
 
 \begin_layout Standard
-Cross Estratificado mensual.
+En la Figura 8 se muestra una pequeña parte de la tabla con los resultados
+ de evaluación del aprendizaje automático con el método Stratified K-fold
+ Cross Validation para los periodos mensuales, quincenales y semanales.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename Recursos/cross_mensual.png
+	filename Recursos/cross_sintetico.png
 	scale 30
 
 \end_inset
@@ -510,7 +526,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Cross Estratificado.
+Resultados de la evaluación del aprendizaje automático con el método Stratified
+ K-fold Cross Validation.
 \end_layout
 
 \end_inset
