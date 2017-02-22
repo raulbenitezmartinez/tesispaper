@@ -307,7 +307,7 @@ Entrenamiento y evaluación de las instancias
 
 \begin_layout Standard
 En la Figura 4 se muestra el conjunto de clasificadores WEKA utilizados
- durante el procesamiento de cada archide vo CSV.
+ durante el procesamiento de cada archivo CSV.
  A su vez estos clasificadores se pueden sub dividir en basesianos, basados
  en funciones, reglas y árboles.
 \end_layout
@@ -419,7 +419,7 @@ En la Figura 6 se muestra qué métricas de evaluación son obtenidas de la
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -453,6 +453,74 @@ Tablas de resultado de las métricas de evaluación
 \end_layout
 
 \begin_layout Standard
+Split mensual.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Recursos/split_mensual.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Split mensual
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Cross Estratificado mensual.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
