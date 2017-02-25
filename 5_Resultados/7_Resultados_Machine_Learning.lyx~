@@ -109,7 +109,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename Recursos/PACI Cross Stratified.png
-	scale 40
+	scale 50
 
 \end_inset
 
@@ -142,12 +142,12 @@ PACI para Cross k-fold Stratified.
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename Recursos/PACI Split.png
-	scale 40
+	scale 50
 
 \end_inset
 
