@@ -446,6 +446,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename images/problemas_acceso_datos.png
+	scale 55
 
 \end_inset
 
@@ -684,7 +685,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename images/datawarehouse.png
-	scale 60
+	scale 55
 
 \end_inset
 
@@ -956,7 +957,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename images/Herramientas de BI.png
-	scale 60
+	scale 55
 
 \end_inset
 
