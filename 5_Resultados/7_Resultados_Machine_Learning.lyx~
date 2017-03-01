@@ -96,7 +96,11 @@ Resultados preliminares del Aprendizaje Automático.
 \end_layout
 
 \begin_layout Subsection
-Resultados del Porcentaje de Aciertos
+Resultados sin un limite inferior permitido
+\end_layout
+
+\begin_layout Subsubsection
+Resultados del porcentaje de aciertos
 \end_layout
 
 \begin_layout Standard
@@ -104,12 +108,12 @@ Resultados del Porcentaje de Aciertos
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename Recursos/PACI Cross Stratified.png
-	scale 50
+	scale 40
 
 \end_inset
 
@@ -147,7 +151,7 @@ status collapsed
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename Recursos/PACI Split.png
-	scale 50
+	scale 40
 
 \end_inset
 
@@ -175,7 +179,123 @@ PACI para Percentage Split.
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
+Resultados de valores máximos
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Max1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Max2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Resultados de valores mínimos
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Min1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Min2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
 Conteo de clasificadores para Cross k-fold Stratified
 \end_layout
 
@@ -184,7 +304,7 @@ Conteo de clasificadores para Cross k-fold Stratified
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -222,7 +342,7 @@ Cross Stratified mensual.
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -257,7 +377,7 @@ Cross Stratified quincenal.
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -287,7 +407,7 @@ Cross Stratified semanal.
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Conteo de clasificadores para Percentage Split
 \end_layout
 
@@ -296,7 +416,7 @@ Conteo de clasificadores para Percentage Split
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -327,7 +447,7 @@ Percentage Split mensual.
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -362,7 +482,7 @@ Percentage Split quincenal.
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -394,6 +514,10 @@ Percentage Split semanal.
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsection
+Resultados con un límite inferior ZeroR
 \end_layout
 
 \end_body

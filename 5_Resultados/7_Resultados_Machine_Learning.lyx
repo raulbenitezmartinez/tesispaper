@@ -96,7 +96,11 @@ Resultados preliminares del Aprendizaje Automático.
 \end_layout
 
 \begin_layout Subsection
-Resultados del Porcentaje de Aciertos
+Resultados sin un limite inferior permitido
+\end_layout
+
+\begin_layout Subsubsection
+Resultados del porcentaje de aciertos
 \end_layout
 
 \begin_layout Standard
@@ -175,7 +179,158 @@ PACI para Percentage Split.
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
+Resultados de valores máximos
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Recursos/cross_max.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Max1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Recursos/split_max.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Max2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Resultados de valores mínimos
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Recursos/cross_min.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Min1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Recursos/split_min.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Min2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
 Conteo de clasificadores para Cross k-fold Stratified
 \end_layout
 
@@ -287,7 +442,7 @@ Cross Stratified semanal.
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Conteo de clasificadores para Percentage Split
 \end_layout
 
@@ -365,10 +520,6 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Graphics
 	filename Recursos/Conteo Split semanal.png
 	scale 40
@@ -394,6 +545,10 @@ Percentage Split semanal.
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsection
+Resultados con un límite inferior ZeroR
 \end_layout
 
 \end_body
