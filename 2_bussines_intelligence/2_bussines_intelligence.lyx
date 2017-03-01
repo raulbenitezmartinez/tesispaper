@@ -887,8 +887,20 @@ La estructura relacional de una base de datos operacional sigue las formas
 \begin_layout Itemize
 Tablas de hecho: es la representación en el datawarehouse de los procesos
  de negocio de la organización.
+ A nivel de diseño es una tabla que permite guardar dos tipos de atributos
+ diferenciados: 
 \end_layout
 
+\begin_deeper
+\begin_layout Itemize
+Medidas del proceso de trabajo que se pretende modelizar
+\end_layout
+
+\begin_layout Itemize
+Claves foráneas hacia registros de una tabla de dimensión 
+\end_layout
+
+\end_deeper
 \begin_layout Itemize
 Dimensión: es la representación en el datawarehouse de una vista para un
  cierto proceso de negocio.
@@ -898,6 +910,33 @@ Dimensión: es la representación en el datawarehouse de una vista para un
 Métrica: son los indicadores de negocio de un proceso de negocio.
  Aquellos conceptos cuantificables que permiten medir nuestro proceso de
  negocio.
+\end_layout
+
+\begin_layout Subsubsection*
+Tipos de esquemas para estructurar los datos en un datawarehouse
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Esquema en estrella:
+\series default
+ consiste en estructurar la información en procesos, vistas y métricas recordand
+o a una estrella.
+ A nivel de diseño, consiste en una tabla de hechos en el centro para el
+ hecho objeto de análisis y una o varias tablas de dimensión por cada punto
+ de vista del análisis que participan en la descripción de ese hecho.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Esquema en copo de nieve:
+\series default
+ es un esquema de representación derivado del esquema en estrella, en el
+ que las tablas de dimensión se normalizan en múltiples tablas.
+ Por esta razón la tabla de hechos deja de ser la única tabla del esquema
+ que se relaciona con otras tablas.
 \end_layout
 
 \begin_layout Subsubsection
@@ -960,7 +999,7 @@ key "INMON96"
  OLAP provee de estas funcionalidades y algunas más.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Paragraph*
 Las principales herramientas
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -1014,7 +1053,56 @@ Herramientas datamining: Permiten a estadísticos o analistas de negocio
 \end_layout
 
 \begin_layout Subsubsection
-Herramientas para BI
+KPI
+\end_layout
+
+\begin_layout Standard
+Son la iniciales de 
+\emph on
+Key Performance Indicators
+\emph default
+ que traducido el español vendrían a ser lo 
+\emph on
+Indicadores Claves de Desempeño.
+
+\emph default
+ Se trata de indicadores que son determinantes para analizar de forma rápida
+ la marcha del negocio y que nos permiten tomar decisiones.
+ Todos los KPI son indicadores, pero no todos los indicadores son KPI
+\begin_inset CommandInset citation
+LatexCommand cite
+key "CMR13"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Un cuadro de gestión o de mando no debe excederse en la cantidad de indicadores
+ claves, porque puede darse el problema de 
+\begin_inset Quotes eld
+\end_inset
+
+la parálisis por el análisis
+\begin_inset Quotes erd
+\end_inset
+
+ y una de las caracteristicas de nuestro entorno competitivo actual es que
+ tenemos que tomar decisiones de forma rápida y antes de que lo hagan los
+ demás.
+ 
+\end_layout
+
+\begin_layout Standard
+Otra característica que define a los KPI es que cada empresa ha de definir
+ cuáles son aquellos indicadores que quiere tener siempres presentes para
+ manejar su rumbo.
+\end_layout
+
+\begin_layout Standard
+El tercer elemento definitorio de los KPI es que no tienen que estar referidos
+ exclusivamente a resultados de tipo financiero.
 \end_layout
 
 \end_body

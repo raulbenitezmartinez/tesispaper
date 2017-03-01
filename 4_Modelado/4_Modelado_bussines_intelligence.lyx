@@ -162,10 +162,17 @@ Base de datos
 \end_layout
 
 \begin_layout Standard
-Para el presente trabajo, la base de datos utilizada corresponde a una base
- de datos auténtica con los registros de productos, proveedores, movimientos
- de compras, ventas y registro de stock actual realizados por una empresa
- retail.
+Para el presente trabajo, contamos con una base de datos auténtica con los
+ registros de productos, proveedores, movimientos de compras, ventas y registro
+ de stock realizados por una empresa retail.
+ Los datos transaccionales contenidos en la base de datos corresponden a
+ movimientos realizados entre el año 2013 al 2016, el cual será el punto
+ de partida para diseñar el datawarehouse.
+\end_layout
+
+\begin_layout Standard
+La base de datos es una base de datos relacional gestionada y administrada
+ por Oracle 11g Enterprise.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -361,8 +368,413 @@ Dataware
 \end_layout
 
 \begin_layout Standard
-aca hablar del diseño del dataware, hacer un pequelo esquema DER del dataware,
- del esquema estrella de los cubos.
+Definimos el datawarehouse tomando como origen la base de datos explicada
+ en el punto anterior.
+ A partir del modelo transaccional creamos 3 cubos con sus tablas de hechos,
+ métricas y dimensiones.
+\end_layout
+
+\begin_layout Subsection*
+Tablas de hechos
+\end_layout
+
+\begin_layout Standard
+De las tablas transaccionales definimos 3 tablas de hechos que nos servirá
+ para definir los KPI que utilizaremos para el análisis.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Tabla de hechos Cabecera:
+\series default
+ almacena los datos históricos de las ventas, cada registro cabecera guarda
+ datos tales como: fecha de la venta, el cliente que realizó la compra,
+ la caja donde fue hecha la operación, el número de la factura y los montos
+ totales de la venta.
+ Las métricas establecidas en esta tabla de hechos son monto total, monto
+ exento, monto gravado, monto gravado 5% y monto gravado 10%.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/BI_DW_FACT_CABEC.png
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tabla de hechos Cabecera
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Tabla de hechos Detalles:
+\series default
+ almacena los datos históricos del detalle de cada transacción, cada registro
+ contiene información del producto vendido tales como: el numero de comprobante,
+ la fecha de venta, el proveedor del producto, el cliente que realizó la
+ compra, la cantidad vendida del producto y el precio del producto.
+ Las métricas asociadas a la tabla de hechos son, cantidad, precio unitario,
+ precio unitario neto, impuesto, costo y el importe total.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/BI_DW_FACT_DETALLES.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tabla de hechos Detalles
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Tabla de hechos Stock:
+\series default
+ almacena los datos históricos de cada movimiento de compra de productos
+ y de venta de productos.
+ Cada registro de la tabla de hechos representa un movimiento realizado
+ que puede corresponder a una compra o una venta de un producto, el producto
+ en movimiento, la fecha del movimiento, la cantidad y los costos.
+ Las métricas utilizadas para la tabla de hechos son: cantidad, precio unitario
+ y costo unitario.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/BI_DW_FACT_STOCK.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tabla de hechos Stock
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Dimensiones
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Dimensión Fecha:
+\series default
+ La tabla de dimensión fecha esta ligada a todas las tablas de hechos, sirve
+ para limitar o agrupar los datos de las tablas de hechos al momento de
+ realizar consultas sobre estas en el tiempo.
+ Con la dimesión fecha se pueden establecer niveles jerárquicos en dias,
+ semanas, meses, trimestres, semestres y años.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/BI_DW_DIM_FECHA.png
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tabla dimensión Fecha
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Dimensión Productos:
+\series default
+ La tabla de dimensión producto esta relacionada a las tablas de hechos
+ Detalles y Stock, contiene los atributos o campos por la cual se pueden
+ filtrar o agrupar datos al realizar consultas sobre la tabla de hechos.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/BI_DW_DIM_PRODUCTOS.png
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tabla dimensión Productos
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Dimensión Proveedores:
+\series default
+ La tabla de dimensión proveedores esta relacionada a la tabla de hechos
+ Detalles, contiene los atributos o campos por la cual se puede filtrar
+ o agrupar datos al realizar consultas sobre la tabla de hechos.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/BI_DW_DIM_PROVEEDORES.png
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tabla dimensión Proveedores
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Dimesión Clientes:
+\series default
+ La tabla de dimensión Clientes esta relacionada a las tablas de hechos
+ Cabecera y Detalles, contiene los atributos o campos por la cual se pueden
+ filtrar o agrupar datos al realizar consultas sobre la tabla de hechos.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/BI_DW_DIM_CLIENTES.png
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tabla dimensión Clientes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Dimension Cajas:
+\series default
+ La tabla de dimensión Cajasa esta relacionada a la tabla de hechos Cabecera,
+ contiene los atributos o campos por la cual se pueden filtrar o agrupar
+ datos al realizar consultas sobre la tabla de hechos.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/BI_DW_DIM_CAJA.png
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tabla dimensión Cajas
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -370,7 +782,805 @@ Definición de los KPI
 \end_layout
 
 \begin_layout Standard
-Listar los kpis tenidos en cuenta para el modelado del negocio
+Los KPI son un elemento vertebrador de la estrategia por su capacidad de
+ comunicar resultados a todas las personas que forman parte del proyecto
+ (directivos, gerentes, vendedores, etc).
+ Con el uso de indicadores claves de rendimiento se trasladan a todas las
+ personas cuáles son los elementos principales sobre los que se apoya la
+ estrategia de organización, posibilita tener planes de accion concretos,
+ ágiles y eficientes, esto apoya en la toma de decisiones basada en la informaci
+ón proporcionada por los indicadores.
+\end_layout
+
+\begin_layout Standard
+En el marco de esta tesis, en esta sección se definirán los KPI que se utilizará
+n en el modelado de la solución de la Cantidad de Compra Óptima de Productos
+ para la reposición de stock para el siguiente periodo de tiempo (Ej.: cantidad
+ a comprar la satisfacer la demanda de la siguiente semana, quincena, o
+ mes).
+\end_layout
+
+\begin_layout Standard
+Cada KPI mide un valor obtenido de los datos históricos almacenados en el
+ datawarehouse.
+ El cálculo de cada valor se realiza para cada producto y en un periodo
+ de tiempo (semanal, quincenal o mensual), es decir, cada producto tendrá
+ un valor distinto para cada uno de los KPI citados a continuación.
+\end_layout
+
+\begin_layout Subsubsection*
+TICKET MEDIO.
+\end_layout
+
+\begin_layout Standard
+Es el importe medio por cada transacción de compra que se realiza de un
+ determinado producto.
+ El indicador viene determinado por dos variables: El importe total vendido
+ del producto y el total de tickets en las que fue vendido el producto.
+ Aplicando la siguiente fórmula obtenemos el valor de importe medio de venta
+ para cada producto.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/KPI_TICKET_MEDIO.png
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Fórmula de Ticket Medio
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+CIFRA DE VENTAS
+\end_layout
+
+\begin_layout Standard
+La cifra de ventas es un KPI que sirve para explicar el importe total de
+ ventas que se ha obtenido para un producto.
+ Se obtiene de la siguiente fórmula.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/KPI_CIFRA_VENTAS.png
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Fórmula Cifra de Ventas
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+MARGEN COMERCIAL
+\end_layout
+
+\begin_layout Standard
+Es la diferencia entre el precio de venta y precio de costo del producto,
+ es un indicador que permite conocer la rentabilidad del producto.
+ Se obtiene de la siguiente fórmula.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/KPI_MARGEN_COMERCIAL.png
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Fórmula Margen Comercial
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+ROTACIÓN DE STOCK
+\end_layout
+
+\begin_layout Standard
+El KPI mide la cantidad de veces que el stock del producto se renueva durante
+ un determinado ciclo comercial.
+ Se obtiene de la siguiente fórmula.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/KPI_ROTACION_STOCK.png
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Fórmula Rotación Stock
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+COEFICIENTE DE RENTABILIDAD
+\end_layout
+
+\begin_layout Standard
+El KPI mide la rentabilidad obtenida por la empresa basada en el margen
+ y la rotación, el objetivo de toda empresa retail es aumentar los niveles
+ de rotación.
+ El coeficiente se obtiene de la siguiente fórmula.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/KPI_COEFICIENTE_RENTABILIDAD.png
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Fórmula Coeficiente de Rentabilidad
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+COBERTURA DE STOCK
+\end_layout
+
+\begin_layout Standard
+Indica el periodo de tiempo (habitualmente se expresa en días o semanas)
+ que el negocio puede continuar vendiendo con el stock de que dispone en
+ el momento, sin incorporar nuevas cantidades de ese producto.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/KPI_COBERTURA_STOCK.png
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Fórmula Cobertura de Stock
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+CÁLCULO DE LOS VALORES DE LOS KPI
+\end_layout
+
+\begin_layout Standard
+Definidos los KPI a ser utilizados, obtenemos los valores para cada KPI
+ de los datos almacenados en el datawarehouse, para ello codificamos a sentencia
+s SQL las fórmulas detalladas mas arriba y almacenamos la información de
+ los resultados en la estructura de datos detallada en la figura 25.
+ Además de los valores de los KPI, en cada registro adicionalmente se guarda
+ la información de la cantidad, fecha, año, mes, quincena y semana.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/BI_DW_KPI_VALUES.png
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/KPI_VALUES_TABLE.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tabla Valores de los KPI
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Cada registro de los valores obtenidos de los KPI corresponden a un determinado
+ producto y un periodo de tiempo determinado.
+ Ejemplo el primer registro del figura 25 corresponde a la información obtenida
+ para el producto con ID igual a 10644 y corresponde al periodo de la primera
+ quincena del mes de diciembre del 2014, esta quincena corresponde a la
+ número 23 del año.
+\end_layout
+
+\begin_layout Subsubsection*
+PERIODOS DE TIEMPO
+\end_layout
+
+\begin_layout Standard
+Agrupamos el cálculo de los valores de los KPI de cada producto en 3 periodos
+ de tiempo: semanal, quincenal y mensual.
+ 
+\end_layout
+
+\begin_layout Paragraph*
+SEMANAL
+\end_layout
+
+\begin_layout Standard
+Para todos los productos existentes en la tabla de dimensiones Productos
+ se realizó el cálculo de los valores de los KPI por periodos de tiempo
+ semanal, como restricción se aplicó que si un producto no fuese vendido
+ en un periodo de 75 semanas consecutivas se descartan los cálculos para
+ dicho producto.
+ Cada producto genera 151 registros que serán utilizados como valores de
+ entrada para el modelado de la solución mediante el aprendizaje automático.
+\end_layout
+
+\begin_layout Standard
+Del universo total de productos, sólo 992 productos cumplieron con las restricci
+ones.
+\end_layout
+
+\begin_layout Standard
+El campo SEMANA se completa de acuerdo al periodo calculado, en el campo
+ PERIODO, se guarda el valor S para semanal.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/KPI_VALUES_SEMANAL.png
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tabla de Valores KPI Semanal
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+QUINCENAL
+\end_layout
+
+\begin_layout Standard
+Para todos los productos existentes en la tabla de dimensiones Productos
+ se realizó el cálculo de los valores de los KPI por periodos de tiempo
+ quincenal, como restricción se aplicó que si un producto no fuese vendido
+ en un periodo de 36 quincenas consecutivas se descartan los cálculos para
+ dicho producto.
+ Cada producto genera 68 registros que serán utilizados como valores de
+ entrada para el modelado de la solución mediante el aprendizaje automático.
+\end_layout
+
+\begin_layout Standard
+Del universo total de productos, sólo 1050 productos cumplieron con las
+ restricciones.
+\end_layout
+
+\begin_layout Standard
+El campo QUINCENA se completa de acuerdo al periodo calculado, en el campo
+ PERIODO, se guarda el valor Q para quincenal.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/KPI_VALUES_QUINCENAL.png
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tabla de Valores KPI Quincenal
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+MENSUAL
+\end_layout
+
+\begin_layout Standard
+Para todos los productos existentes en la tabla de dimensiones Productos
+ se realizó el cálculo de los valores de los KPI por periodos de tiempo
+ mensual, como restricción se aplicó que si un producto no fuese vendido
+ en un periodo de 18 meses consecutivas se descartan los cálculos para dicho
+ producto.
+ Cada producto genera 34 registros que serán utilizados como valores de
+ entrada para el modelado de la solución mediante el aprendizaje automático.
+\end_layout
+
+\begin_layout Standard
+Del universo total de productos, sólo 1052 productos cumplieron con las
+ restricciones.
+\end_layout
+
+\begin_layout Standard
+El campo MES se completa para todos los casos del periodo calculado, en
+ el campo PERIODO, se guarda el valor M para mensual.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/KPI_VALUES_MENSUAL.png
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tabla de Valores KPI Mensual
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+ESTRATEGIA DE ETIQUETADO
+\end_layout
+
+\begin_layout Standard
+A cada tupla de valores KPI obtenidos para cada producto se le debe asignar
+ una etiqueta, el cual es uno de los valores importantes para el modelado
+ mediante el aprendizaje automático.
+ Esta asignación de las etiquetas esta basada en la opinión de un experto
+ (que habitualmente podría ser el gerente de compras).
+ La estrategia utilizada para el etiquedato es de la siguiente manera:
+\end_layout
+
+\begin_layout Standard
+Se toma como base los siguientes KPI.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/Ejemplo de etiquetas.png
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tabla de etiquetado
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+De la figura 29, para cada KPI el rango de montos utilizados se toma de
+ la tabla de valores de KPI (Figura 25).
+ Ejemplo:
+\end_layout
+
+\begin_layout Itemize
+< 4.033.600, donde el monto corresponde a 
+\noun on
+MIN(KPI_CIFRA_VENTAS)
+\end_layout
+
+\begin_layout Itemize
+Entre 4.000.000 y 6.382.100, donde el primer monto corresponde a MIN(KPI_CIFRA_VENTA
+S) + (MAX(KPI_CIFRA_VENTAS) - MIN(KPI_CIFRA_VENTAS)* 40%) y el segundo monto
+ corresponde MIN(KPI_CIFRA_VENTAS) + (MAX(KPI_CIFRA_VENTAS) - MIN(KPI_CIFRA_VENT
+AS)* 65%)
+\end_layout
+
+\begin_layout Itemize
+> 6.382.100, donde el monto corresponde a MIN(KPI_CIFRA_VENTAS) + 65%
+\end_layout
+
+\begin_layout Standard
+Una vez asignado los valores 
+\begin_inset Quotes eld
+\end_inset
+
+a
+\begin_inset Quotes erd
+\end_inset
+
+, 
+\begin_inset Quotes eld
+\end_inset
+
+b
+\begin_inset Quotes erd
+\end_inset
+
+, 
+\begin_inset Quotes eld
+\end_inset
+
+c
+\begin_inset Quotes erd
+\end_inset
+
+, en la tabla de emparejamientos de la figura 30, se busca y se asigna el
+ valor de la etiqueta correspondiente.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/Regla de etiquetas.png
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tabla de emparejamientos
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Una vez realizado los pasos anteriores la tabla de valores de KPI, queda
+ de la siguiente manera:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/KPI_VALUES_ETIQUETADO.png
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tabla de valores de KPI con etiquetas
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Una vez finalizado el etiquetado, lo resultados son exportados a archivos
+ con extensión csv, para cada producto se crea 3 archivos, uno por cada
+ periodo (semanal, quincenal, mensual) que tiene como nombre el ID del producto
+ y que contiene los valores de los resultados para los KPI.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/KPI_VALUES_CSV.png
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Archivos CSV
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Estos archivos son los datos que sirven como entrada para crear el modelo
+ de Cantidad de Compra Óptima para la reposicion de stock mediante algoritmos
+ de aprendizaje automático
 \end_layout
 
 \end_body
