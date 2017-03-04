@@ -77,3 +77,289 @@ Resultados de Business Intelligence
 
 \end_body
 \end_document
+=======
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass IEEEtran
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Resultados de Bussines Intelligence
+\end_layout
+
+\begin_layout Subsection
+Valores obtenidos
+\end_layout
+
+\begin_layout Standard
+Para el conjunto total de datos disponibles en el dataware para cada producto
+ se realizaron 3 ejecuciones del algoritmo de cálculo de los valores de
+ los KPI para rangos de tiempo diferentes: semanal, quincenal y mensual.
+\end_layout
+
+\begin_layout Subsubsection
+Rango de tiempo.
+\end_layout
+
+\begin_layout Subsubsection*
+Semanal
+\end_layout
+
+\begin_layout Standard
+Para todos los productos existentes en la tabla de dimensiones Productos
+ se realizó el cálculo de los valores de los KPI por periodos de tiempo
+ semanal, como restricción se aplicó que si un producto no fuese vendido
+ en un periodo de 75 semanas consecutivas se descartan los cálculos para
+ dicho producto, se dicha restricción debido a que al no ser vendido por
+ un periodo largo de tiempo los valores KPI generados dan como resultado
+ 0(Cero) lo cual no tiene relevancia en el modelado.
+\end_layout
+
+\begin_layout Standard
+Para cada producto considerado se genera 151 registros que serán utilizados
+ como valores de entrada para el modelado de la solución mediante el aprendizaje
+ automático.
+\end_layout
+
+\begin_layout Standard
+Del universo total de productos, sólo 992 productos cumplieron con las restricci
+ones, es decir, esto productos no cesaron las ventas por un periodo de tiempo
+ mayor o igual a 75 semanas.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/Resultados_Etiquetas_Semanal.png
+	scale 23
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tabla de etiquetas KPI Semanal
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Quincenal.
+\end_layout
+
+\begin_layout Standard
+Para todos los productos existentes en la tabla de dimensiones Productos
+ se realizó el cálculo de los valores de los KPI por periodos de tiempo
+ quincenal, como restricción se aplicó que si un producto no fuese vendido
+ en un periodo de 36 quincenas consecutivas se descartan los cálculos para
+ dicho producto, se dicha restricción debido a que al no ser vendido por
+ un periodo largo de tiempo los valores KPI generados dan como resultado
+ 0(Cero) lo cual no tiene relevancia en el modelado.
+\end_layout
+
+\begin_layout Standard
+Para cada producto considerado se genera 68 registros que serán utilizados
+ como valores de entrada para el modelado de la solución mediante el aprendizaje
+ automático.
+\end_layout
+
+\begin_layout Standard
+Del universo total de productos, sólo 1050 productos cumplieron con las
+ restricciones, es decir, esto productos no cesaron las ventas por un periodo
+ de tiempo mayor o igual a 36 quincenas.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/Resultados_Etiquetas_Quincenal.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tabla de etiquetas KPI Quincenal
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Mensual.
+\end_layout
+
+\begin_layout Standard
+Para todos los productos existentes en la tabla de dimensiones Productos
+ se realizó el cálculo de los valores de los KPI por periodos de tiempo
+ mensual, como restricción se aplicó que si un producto no fuese vendido
+ en un periodo de 18 meses consecutivas se descartan los cálculos para dicho
+ producto, se dicha restricción debido a que al no ser vendido por un periodo
+ largo de tiempo los valores KPI generados dan como resultado 0(Cero) lo
+ cual no tiene relevancia en el modelado.
+\end_layout
+
+\begin_layout Standard
+Para cada producto considerado se genera 34 registros que serán utilizados
+ como valores de entrada para el modelado de la solución mediante el aprendizaje
+ automático.
+\end_layout
+
+\begin_layout Standard
+Del universo total de productos, sólo 1052 productos cumplieron con las
+ restricciones, es decir, esto productos no cesaron las ventas por un periodo
+ de tiempo mayor o igual a 18 meses.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/Resultados_Etiquetas_Mensual.png
+	scale 32
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tabla de etiquetas KPI Mensual
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

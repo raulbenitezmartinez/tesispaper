@@ -186,6 +186,7 @@ La empresa retail cuenta con 13.200 articulos registrados disponibles para
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -193,7 +194,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename images/tabla_productos.png
-	scale 50
+	scale 30
 
 \end_inset
 
@@ -231,6 +232,7 @@ La empresa contiene una base de 1.623 proveedores registrados.
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -238,7 +240,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename images/tabla_proveedores.png
-	scale 50
+	scale 30
 
 \end_inset
 
@@ -278,6 +280,7 @@ La tabla de ventas cabecera es una de las tablas principales donde se registran
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -285,7 +288,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename images/tabla_cabecera.png
-	scale 50
+	scale 30
 
 \end_inset
 
@@ -328,6 +331,7 @@ La tabla de ventas detalle contiene los registros de los productos que fueron
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -335,7 +339,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename images/tabla_detalles.png
-	scale 50
+	scale 25
 
 \end_inset
 
@@ -400,6 +404,7 @@ Tabla de hechos Cabecera:
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -450,6 +455,7 @@ Tabla de hechos Detalles:
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -501,6 +507,7 @@ Tabla de hechos Stock:
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -554,6 +561,7 @@ Dimensión Fecha:
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -601,6 +609,7 @@ Dimensión Productos:
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -648,6 +657,7 @@ Dimensión Proveedores:
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -695,6 +705,7 @@ Dimesión Clientes:
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -742,6 +753,7 @@ Dimension Cajas:
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -866,6 +878,7 @@ La cifra de ventas es un KPI que sirve para explicar el importe total de
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -913,6 +926,7 @@ Es la diferencia entre el precio de venta y precio de costo del producto,
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -960,6 +974,7 @@ El KPI mide la cantidad de veces que el stock del producto se renueva durante
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -1008,6 +1023,7 @@ El KPI mide la rentabilidad obtenida por la empresa basada en el margen
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -1055,6 +1071,7 @@ Indica el periodo de tiempo (habitualmente se expresa en días o semanas)
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -1105,6 +1122,7 @@ s SQL las fórmulas detalladas mas arriba y almacenamos la información de
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -1122,7 +1140,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename images/KPI_VALUES_TABLE.png
-	scale 55
+	scale 22
 
 \end_inset
 
@@ -1174,18 +1192,8 @@ SEMANAL
 \end_layout
 
 \begin_layout Standard
-Para todos los productos existentes en la tabla de dimensiones Productos
- se realizó el cálculo de los valores de los KPI por periodos de tiempo
- semanal, como restricción se aplicó que si un producto no fuese vendido
- en un periodo de 75 semanas consecutivas se descartan los cálculos para
- dicho producto.
- Cada producto genera 151 registros que serán utilizados como valores de
- entrada para el modelado de la solución mediante el aprendizaje automático.
-\end_layout
-
-\begin_layout Standard
-Del universo total de productos, sólo 992 productos cumplieron con las restricci
-ones.
+En la figura 26 se puede observar una parte de los valores obtenidos para
+ un producto por el rango de tiempo semanal.
 \end_layout
 
 \begin_layout Standard
@@ -1195,6 +1203,7 @@ El campo SEMANA se completa de acuerdo al periodo calculado, en el campo
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -1202,7 +1211,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename images/KPI_VALUES_SEMANAL.png
-	scale 55
+	scale 22
 
 \end_inset
 
@@ -1235,18 +1244,8 @@ QUINCENAL
 \end_layout
 
 \begin_layout Standard
-Para todos los productos existentes en la tabla de dimensiones Productos
- se realizó el cálculo de los valores de los KPI por periodos de tiempo
- quincenal, como restricción se aplicó que si un producto no fuese vendido
- en un periodo de 36 quincenas consecutivas se descartan los cálculos para
- dicho producto.
- Cada producto genera 68 registros que serán utilizados como valores de
- entrada para el modelado de la solución mediante el aprendizaje automático.
-\end_layout
-
-\begin_layout Standard
-Del universo total de productos, sólo 1050 productos cumplieron con las
- restricciones.
+En la figura 27 se puede observar una parte de los valores obtenidos para
+ un producto por el rango de tiempo quincenal.
 \end_layout
 
 \begin_layout Standard
@@ -1256,6 +1255,7 @@ El campo QUINCENA se completa de acuerdo al periodo calculado, en el campo
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -1263,7 +1263,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename images/KPI_VALUES_QUINCENAL.png
-	scale 55
+	scale 22
 
 \end_inset
 
@@ -1296,18 +1296,8 @@ MENSUAL
 \end_layout
 
 \begin_layout Standard
-Para todos los productos existentes en la tabla de dimensiones Productos
- se realizó el cálculo de los valores de los KPI por periodos de tiempo
- mensual, como restricción se aplicó que si un producto no fuese vendido
- en un periodo de 18 meses consecutivas se descartan los cálculos para dicho
- producto.
- Cada producto genera 34 registros que serán utilizados como valores de
- entrada para el modelado de la solución mediante el aprendizaje automático.
-\end_layout
-
-\begin_layout Standard
-Del universo total de productos, sólo 1052 productos cumplieron con las
- restricciones.
+En la figura 28 se puede observar una parte de los valores obtenidos para
+ un producto por el rango de tiempo mensual.
 \end_layout
 
 \begin_layout Standard
@@ -1317,6 +1307,7 @@ El campo MES se completa para todos los casos del periodo calculado, en
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -1324,7 +1315,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename images/KPI_VALUES_MENSUAL.png
-	scale 55
+	scale 22
 
 \end_inset
 
@@ -1353,7 +1344,7 @@ Tabla de Valores KPI Mensual
 \end_layout
 
 \begin_layout Subsubsection
-ESTRATEGIA DE ETIQUETADO
+ASIGNACIÓN DE ETIQUETAS
 \end_layout
 
 \begin_layout Standard
@@ -1371,6 +1362,7 @@ Se toma como base los siguientes KPI.
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -1378,7 +1370,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename images/Ejemplo de etiquetas.png
-	scale 55
+	scale 40
 
 \end_inset
 
@@ -1413,20 +1405,20 @@ De la figura 29, para cada KPI el rango de montos utilizados se toma de
 \end_layout
 
 \begin_layout Itemize
-< 4.033.600, donde el monto corresponde a 
-\noun on
-MIN(KPI_CIFRA_VENTAS)
+< 4.033.600, donde el monto corresponde a MIN(KPI_CIFRA_VENTAS) + (MAX(KPI_CIFRA_V
+ENTAS) - MIN(KPI_CIFRA_VENTAS)* 40%)
 \end_layout
 
 \begin_layout Itemize
-Entre 4.000.000 y 6.382.100, donde el primer monto corresponde a MIN(KPI_CIFRA_VENTA
+Entre 4.033.600 y 6.382.100, donde el primer monto corresponde a MIN(KPI_CIFRA_VENTA
 S) + (MAX(KPI_CIFRA_VENTAS) - MIN(KPI_CIFRA_VENTAS)* 40%) y el segundo monto
  corresponde MIN(KPI_CIFRA_VENTAS) + (MAX(KPI_CIFRA_VENTAS) - MIN(KPI_CIFRA_VENT
 AS)* 65%)
 \end_layout
 
 \begin_layout Itemize
-> 6.382.100, donde el monto corresponde a MIN(KPI_CIFRA_VENTAS) + 65%
+> 6.382.100, donde el monto corresponde a MIN(KPI_CIFRA_VENTAS) + (MAX(KPI_CIFRA_V
+ENTAS) - MIN(KPI_CIFRA_VENTAS)* 65%)
 \end_layout
 
 \begin_layout Standard
@@ -1460,6 +1452,7 @@ c
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -1502,6 +1495,7 @@ Una vez realizado los pasos anteriores la tabla de valores de KPI, queda
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -1509,7 +1503,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename images/KPI_VALUES_ETIQUETADO.png
-	scale 55
+	scale 25
 
 \end_inset
 
@@ -1542,6 +1536,7 @@ Una vez finalizado el etiquetado, lo resultados son exportados a archivos
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open

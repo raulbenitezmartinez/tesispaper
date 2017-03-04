@@ -247,6 +247,7 @@ Fuentes de información
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -360,6 +361,7 @@ ETL corresponde a las siglas del inglés Extract, Transform and Load (Extracció
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -439,6 +441,7 @@ os de ETL.
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -674,6 +677,7 @@ key "CJ20"
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -946,6 +950,7 @@ Herramientas de Business Intelligence
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -957,7 +962,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename images/Herramientas de BI.png
-	scale 55
+	scale 50
 
 \end_inset
 
