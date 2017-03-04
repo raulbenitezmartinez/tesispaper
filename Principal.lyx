@@ -153,6 +153,25 @@ target "dpinto@pol.una.py"
 
 \end_inset
 
+, A.
+ Vazquez
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+A.
+ Vazquez Facultad Politécnica, UNA, Paraguay, e-mail: 
+\begin_inset CommandInset href
+LatexCommand href
+target "vazquez.aditardo@gmail.com"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
@@ -181,6 +200,34 @@ filename "3_Machine_Learning/03_Machine_Learning.lyx"
 \begin_inset CommandInset include
 LatexCommand input
 filename "4_Modelado/4_Modelado_bussines_intelligence.lyx"
+
+\end_inset
+
+
+\begin_inset CommandInset include
+LatexCommand input
+filename "4_Modelado/5_Modelado_Machine_Learning.lyx"
+
+\end_inset
+
+
+\begin_inset CommandInset include
+LatexCommand input
+filename "5_Resultados/6_Resultados_bussines_intelligence.lyx"
+
+\end_inset
+
+
+\begin_inset CommandInset include
+LatexCommand input
+filename "5_Resultados/7_Resultados_Machine_Learning.lyx"
+
+\end_inset
+
+
+\begin_inset CommandInset include
+LatexCommand input
+filename "6_Conclusiones/8_Conclusiones.lyx"
 
 \end_inset
 

@@ -205,7 +205,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Max1
+Max para Cross k-fold Stratified.
 \end_layout
 
 \end_inset
@@ -224,6 +224,7 @@ Max1
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -239,7 +240,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Max2
+Max para Percentage Split.
 \end_layout
 
 \end_inset
@@ -278,7 +279,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Min1
+Min para Cross k-fold Stratified.
 \end_layout
 
 \end_inset
@@ -313,7 +314,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Min2
+Min para Percentage Split.
 \end_layout
 
 \end_inset
@@ -545,10 +546,6 @@ Percentage Split semanal.
 \end_inset
 
 
-\end_layout
-
-\begin_layout Subsection
-Resultados con un límite inferior ZeroR
 \end_layout
 
 \end_body

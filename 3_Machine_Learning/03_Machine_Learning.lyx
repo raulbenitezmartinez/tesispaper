@@ -317,7 +317,9 @@ Etiquetas (labels): Las cantidades nominales tienen valores que son símbolos
 \end_layout
 
 \begin_layout Subsubsection
-Conjunto de entrenamiento (training set): 
+Conjunto de entrenamiento (training set): son los ejemplos o instancias
+ utilizadas en el proceso de entrenamiento del algoritmo de aprendizaje
+ automático.
 \end_layout
 
 \begin_layout Subsubsection
@@ -572,7 +574,7 @@ Validación Cruzada K-fold Estratificado (stratified k-fold cross validation):
  representa en aproximadamente las mismas proporciones que en el conjunto
  de datos completo.
  Cada parte se extiende a su vez y el esquema de aprendizaje entrenado en
- los restantes nueve décimos; Entonces su tasa de error se calcula en el
+ los restantes nueve décimos; entonces su tasa de error se calcula en el
  conjunto de retención.
  Así, el procedimiento de aprendizaje se ejecuta un total de 10 veces en
  diferentes conjuntos de entrenamiento (cada conjunto tiene mucho en común
@@ -602,7 +604,13 @@ Validación Cruzada K-fold Estratificado (stratified k-fold cross validation):
 \end_layout
 
 \begin_layout Subsubsection
-Percentage split: 
+Porcentaje de división (percentage split): Con el que puede retener para
+ la prueba un determinado porcentaje de los datos.
+ Es una alternativa, utilizar un conjunto de pruebas separado o una división
+ porcentual de los datos de entrenamiento.
+ Si elegimos 60% como porcentaje de división, entonces el conjunto de prueba
+ se constituirá con el 40% de las instancias y el conjunto de entrenamiento
+ con el 60% de las instancias.
 \end_layout
 
 \begin_layout Subsection
@@ -738,17 +746,17 @@ PARA COMPARAR varios esquemas de aprendizaje automático: Este es un trabajo
 \end_layout
 
 \begin_layout Subsubsection
-correct() - number of correctly classified instances.
+correct(): Número de instancias correctamente clasificadas.
 \end_layout
 
 \begin_layout Subsubsection
-pctCorrect() - percentage of correctly classified instances.
+pctCorrect(): Porcentaje de instancias correctamente clasificadas.
 \end_layout
 
 \begin_layout Subsubsection
-kappa() - KAPPA STATISTIC: CONTAR EL COSTO o COUNTING THE COST: Las evaluaciones
- que se han discutido hasta ahora no tienen en cuenta el costo de tomar
- decisiones equivocadas, clasificaciones erróneas.
+kappa() - Estadística Kappa (Kappa Statistic): Las evaluaciones que se han
+ discutido hasta ahora no tienen en cuenta el costo de tomar decisiones
+ equivocadas, clasificaciones erróneas.
  Otros ejemplos en los que los errores cuestan diferentes cantidades incluyen
  las decisiones de préstamo: El costo de prestar a un deudor es mucho mayor
  que el costo de negocio perdido de rechazar un préstamo a un no deudor.
@@ -788,7 +796,7 @@ kappa() - KAPPA STATISTIC: CONTAR EL COSTO o COUNTING THE COST: Las evaluaciones
 \end_layout
 
 \begin_layout Subsubsection
-areaUnderROC(int classIndex) - CURVAS ROC o ROC Curves: Están estrechamente
+areaUnderROC(int classIndex) - Curvas ROC (ROC Curves): Están estrechamente
  relacionados con una técnica gráfica para evaluar los esquemas de minería
  de datos conocidos como curvas ROC, que se utilizan en la misma situación,
  donde el alumno está tratando de seleccionar muestras de instancias de
@@ -828,9 +836,9 @@ areaUnderROC(int classIndex) - CURVAS ROC o ROC Curves: Están estrechamente
 \end_layout
 
 \begin_layout Subsubsection
-recall(int classIndex) y precision(int classIndex) - RECALL-PRECISION CURVES:
- La gente ha lidiado con la compensación fundamental ilustrada por los gráficos
- de elevación y las curvas ROC en una amplia variedad de dominios.
+recall(int classIndex) y precision(int classIndex): La gente ha lidiado
+ con la compensación fundamental ilustrada por los gráficos de elevación
+ y las curvas ROC en una amplia variedad de dominios.
  Comparar un sistema que localiza 100 documentos, 40 de los cuales son relevante
 s, con otro que localiza 400 documentos, 80 de los cuales son relevantes.
  ¿Cual es mejor? La respuesta ahora debe ser obvia: depende del costo relativo
@@ -851,7 +859,11 @@ s de la misma manera que las curvas ROC y los gráficos de elevación, excepto
  false positives, true negatives, and false negatives, respectively.
  Diferentes técnicas dan diferentes compensaciones, y se pueden trazar como
  líneas diferentes en cualquiera de estas gráficas.
- TABLA 5.7
+ TABLA 5.7.
+\end_layout
+
+\begin_layout Subsubsection
+F-Measure:
 \end_layout
 
 \begin_layout Subsubsection

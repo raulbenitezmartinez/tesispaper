@@ -108,7 +108,7 @@ Resultados del porcentaje de aciertos
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -146,7 +146,7 @@ PACI para Cross k-fold Stratified.
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -185,15 +185,27 @@ Resultados de valores máximos
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Recursos/cross_max.png
+	scale 50
+
+\end_inset
+
+
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Max1
+Max para Cross k-fold Stratified.
 \end_layout
 
 \end_inset
@@ -212,15 +224,23 @@ Max1
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
+\begin_inset Graphics
+	filename Recursos/split_max.png
+	scale 50
+
+\end_inset
+
+
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Max2
+Max para Percentage Split.
 \end_layout
 
 \end_inset
@@ -243,15 +263,23 @@ Resultados de valores mínimos
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
+\begin_inset Graphics
+	filename Recursos/cross_min.png
+	scale 50
+
+\end_inset
+
+
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Min1
+Min para Cross k-fold Stratified.
 \end_layout
 
 \end_inset
@@ -270,15 +298,23 @@ Min1
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
+\begin_inset Graphics
+	filename Recursos/split_min.png
+	scale 50
+
+\end_inset
+
+
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Min2
+Min para Percentage Split.
 \end_layout
 
 \end_inset
@@ -304,7 +340,7 @@ Conteo de clasificadores para Cross k-fold Stratified
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -342,7 +378,7 @@ Cross Stratified mensual.
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -377,7 +413,7 @@ Cross Stratified quincenal.
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -416,7 +452,7 @@ Conteo de clasificadores para Percentage Split
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -447,7 +483,7 @@ Percentage Split mensual.
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -482,11 +518,7 @@ Percentage Split quincenal.
 placement H
 wide false
 sideways false
-status collapsed
-
-\begin_layout Plain Layout
-
-\end_layout
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -518,6 +550,18 @@ Percentage Split semanal.
 
 \begin_layout Subsection
 Resultados con un límite inferior ZeroR
+\end_layout
+
+\begin_layout Subsubsection
+Resultados del porcentaje de aciertos
+\end_layout
+
+\begin_layout Subsubsection
+Resultados de valores máximos
+\end_layout
+
+\begin_layout Subsubsection
+Resultados de valores mínimos
 \end_layout
 
 \end_body
