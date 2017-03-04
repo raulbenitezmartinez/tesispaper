@@ -195,7 +195,7 @@ La dificultad radica en que debemos construir modelos que nos acerquen a
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -673,8 +673,6 @@ dor, aunque los retornos comienzan a disminuir una vez que se sobrepasa
 \begin_layout Standard
 El verdadero problema ocurre cuando no hay una gran cantidad de datos disponible
 s.
- Las secciones 5.3 y 5.4 revisan métodos ampliamente utilizados para hacer
- frente a este dilema.
 \end_layout
 
 \begin_layout Standard
@@ -718,48 +716,25 @@ Una manera más general de mitigar cualquier sesgo causado por la muestra
  error.
 \end_layout
 
-\begin_layout Standard
-PARA COMPARAR varios esquemas de aprendizaje automático: Este es un trabajo
- para una prueba estadística basada en límites de confianza, el tipo que
- conocimos anteriormente al tratar de predecir el rendimiento real de una
- determinada tasa de error de prueba.
- Lo que queremos determinar es si un esquema es mejor o peor que otro en
- promedio, en todos los posibles conjuntos de datos de entrenamiento y prueba
- que se pueden extraer del dominio.
- Debido a que la cantidad de datos de entrenamiento afecta naturalmente
- el rendimiento, todos los conjuntos de datos deben ser del mismo tamaño.
- De hecho, el experimento podría repetirse con diferentes tamaños para obtener
- una curva de aprendizaje.
- For each learning scheme we can draw several datasets of the same size,
- obtain an accuracy estimate for each dataset using cross-validation, and
- compute the mean of the estimates.
- Each cross-validation experiment yields a different, independent error
- estimate.
- What we are interested in is the mean accuracy across all possible datasets
- of the same size, and whether this mean is greater for one scheme or the
- other.
- This is a job for a statistical device known as the T-TEST, or Student’s
- t-test.
- Because the same cross-validation experiment can be used for both learning
- schemes to obtain a matched pair of results for each dataset, a more sensitive
- version of the t-test known as a paired t-test can be used.
+\begin_layout Subsubsection
+Aciertos: Número de instancias correctamente clasificadas.
+ En WEKA el método correct() obtiene el número de instancias correctamente
+ clasificadas (es decir, para las que se realizó una predicción correcta),
+ en realidad es la suma de los pesos de estas instancias.
+ 
 \end_layout
 
 \begin_layout Subsubsection
-correct(): Número de instancias correctamente clasificadas.
+Porcentaje de Aciertos: Porcentaje de instancias correctamente clasificadas.
+ En WEKA el método pctCorrect() obtiene el porcentaje de instancias correctament
+e clasificadas (es decir, para las que se realizó una predicción correcta).
 \end_layout
 
 \begin_layout Subsubsection
-pctCorrect(): Porcentaje de instancias correctamente clasificadas.
-\end_layout
-
-\begin_layout Subsubsection
-kappa() - Estadística Kappa (Kappa Statistic): Las evaluaciones que se han
- discutido hasta ahora no tienen en cuenta el costo de tomar decisiones
- equivocadas, clasificaciones erróneas.
- Otros ejemplos en los que los errores cuestan diferentes cantidades incluyen
- las decisiones de préstamo: El costo de prestar a un deudor es mucho mayor
- que el costo de negocio perdido de rechazar un préstamo a un no deudor.
+Estadística Kappa (Kappa Statistic): Ejemplos en los que los errores cuestan
+ diferentes cantidades incluyen las decisiones de préstamo: El costo de
+ prestar a un deudor es mucho mayor que el costo de negocio perdido de rechazar
+ un préstamo a un no deudor.
  Y la detección de mancha de aceite: El costo de no detectar una mancha
  real que amenaza el medio ambiente es mucho mayor que el costo de una falsa
  alarma.
@@ -773,7 +748,7 @@ kappa() - Estadística Kappa (Kappa Statistic): Las evaluaciones que se han
  Un falso negativo (FN) es cuando el resultado se predice incorrectamente
  como negativo cuando es realmente positivo.
  La tasa positiva verdadera es TP dividida por el número total de positivos,
- que es TP + FN; La tasa de falsos positivos es FP dividida por el número
+ que es TP + FN; la tasa de falsos positivos es FP dividida por el número
  total de negativos, que es FP + TN.
  La tasa de éxito global es el número de clasificaciones correctas dividido
  por el número total de clasificaciones: TP +TN/ TP+ TN +FP +FN, por último,
@@ -783,7 +758,7 @@ kappa() - Estadística Kappa (Kappa Statistic): Las evaluaciones que se han
  prevista es la columna.
  Los buenos resultados corresponden a grandes números en la diagonal principal
  y pequeños, idealmente cero, fuera de los elementos diagonales.
- Una medida denominada KAPPA STATISTIC tiene en cuenta este factor previsto
+ Una medida denominada Kappa Statistic tiene en cuenta este factor previsto
  deduciéndolo de los éxitos del predictor y expresando el resultado como
  una proporción del total para un predictor perfecto.
  El valor máximo de Kappa es 100%, y el valor esperado para un predictor
@@ -793,14 +768,16 @@ kappa() - Estadística Kappa (Kappa Statistic): Las evaluaciones que se han
  se corrige un acuerdo que se produce por casualidad.
  Sin embargo, al igual que la tasa de éxito simple, no toma en cuenta los
  costos.
+ En WEKA el método kappa() devuelve el valor de la estadística kappa si
+ la clase es nominal.
 \end_layout
 
 \begin_layout Subsubsection
-areaUnderROC(int classIndex) - Curvas ROC (ROC Curves): Están estrechamente
- relacionados con una técnica gráfica para evaluar los esquemas de minería
- de datos conocidos como curvas ROC, que se utilizan en la misma situación,
- donde el alumno está tratando de seleccionar muestras de instancias de
- prueba que tienen una alta proporción de positivos.
+Curvas ROC (ROC Curves): Están estrechamente relacionados con una técnica
+ gráfica para evaluar los esquemas de minería de datos conocidos como curvas
+ ROC, que se utilizan en la misma situación, donde el alumno está tratando
+ de seleccionar muestras de instancias de prueba que tienen una alta proporción
+ de positivos.
  El acrónimo significa la característica de funcionamiento del receptor
  (Receiver Operating Characteristic), un término usado en la detección de
  señal para caracterizar la compensación entre la tasa de acierto y la tasa
@@ -831,51 +808,61 @@ areaUnderROC(int classIndex) - Curvas ROC (ROC Curves): Están estrechamente
  Para cada fold de una 10-fold validación cruzada, ponderar las instancias
  para una selección de diferentes ratios de coste, entrenar el esquema en
  cada conjunto ponderado, contar los verdaderos positivos y falsos positivos
- en el conjunto de pruebas y trazar el punto resultante en los ejes ROC
- .
+ en el conjunto de pruebas y trazar el punto resultante en los ejes ROC.
+ En WEKA el método areaUnderROC(int classIndex) devuelve el área bajo ROC
+ para las predicciones que se han recogido en el método evaluateClassifier(Class
+ifier, Instances).
 \end_layout
 
 \begin_layout Subsubsection
-recall(int classIndex) y precision(int classIndex): La gente ha lidiado
- con la compensación fundamental ilustrada por los gráficos de elevación
- y las curvas ROC en una amplia variedad de dominios.
+Sensibilidad (Recall) y Precisión (Precision): La gente ha lidiado con la
+ compensación fundamental ilustrada por los gráficos de elevación y las
+ curvas ROC en una amplia variedad de dominios.
  Comparar un sistema que localiza 100 documentos, 40 de los cuales son relevante
 s, con otro que localiza 400 documentos, 80 de los cuales son relevantes.
  ¿Cual es mejor? La respuesta ahora debe ser obvia: depende del costo relativo
  de falsos positivos, documentos devueltos que no sean relevantes, y falsos
  negativos, documentos que son relevantes pero que no se devuelven.
  Los investigadores de recuperación de información definen parámetros llamados
- recall y precisión: RECALL = number of documents retrieved that are relevant
- / total number of documents that are relevant.
- PRECISION: number of documents retrieved that are relevant / total number
+ recall y precisión.
+ Recall = number of documents retrieved that are relevant / total number
+ of documents that are relevant.
+ Precision: number of documents retrieved that are relevant / total number
  of documents that are retrieved.
- Los expertos en recuperación de información usan curvas recall-precision
- que trazan una contra la otra, para diferentes números de documentos recuperado
-s de la misma manera que las curvas ROC y los gráficos de elevación, excepto
- que debido a que los ejes son diferentes, las curvas son de forma hiperbólica
+ En WEKA el método recall(int classIndex) calcula la sensibilidad con respecto
+ a una clase en particular, esto se define como: positivos correctamente
+ clasificados / positivos totales.
+ En WEKA el método precision(int classIndex) calcula la precisión con respecto
+ a una clase en particular, esto se define como: positivos correctamente
+ clasificados / total predicho como positivo.
+\end_layout
+
+\begin_layout Subsubsection
+Medida-F o Puntuación-F (F-Measure o F-Score): En el análisis estadístico
+ de clasificación binaria, la Puntuación-F es una medida de la exactitud
+ de una prueba.
+ La Puntuación-F puede interpretarse como un promedio ponderado de la precisión
+ y sensibilidad, donde alcanza su mejor valor en 1 y el peor en 0.
+ En WEKA el método fMeasure(int classIndex) calcula la Puntuación-F con
+ respecto a una clase en particular, esto se define como: 2 * recall * precision
+ / recall + precision.
+\end_layout
+
+\begin_layout Subsubsection
+Curvas Sensibilidad-Precisión (Recall-Precision Curves): Los expertos en
+ recuperación de información usan curvas recall-precision que trazan una
+ contra la otra, para diferentes números de documentos recuperados de la
+ misma manera que las curvas ROC y los gráficos de elevación, excepto que
+ debido a que los ejes son diferentes, las curvas son de forma hiperbólica
  y el punto de operación deseado está hacia la parte superior derecha.
  Table 5.7 summarizes the three different ways introduced for evaluating
  the same basic tradeoff; TP, FP, TN, and FN are the numbers of true positives,
  false positives, true negatives, and false negatives, respectively.
  Diferentes técnicas dan diferentes compensaciones, y se pueden trazar como
  líneas diferentes en cualquiera de estas gráficas.
- TABLA 5.7.
-\end_layout
-
-\begin_layout Subsubsection
-F-Measure:
-\end_layout
-
-\begin_layout Subsubsection
-areaUnderPRC(int classIndex) - Area Under Precision-Recall Curve:
-\end_layout
-
-\begin_layout Subsubsection
-Tasa de error (error rate): on the testing data.
- Predecir la tasa de error.
- Tenfold cross-validation is the standard way of measuring the error rate
- of a learning scheme on a particular dataset.
- The basic quality measure offered by the error rate is longer appropriate.
+ En WEKA el método areaUnderPRC(int classIndex) devuelve el área bajo la
+ curva sensibilidad-precisión para las predicciones que se han recogido
+ en el método evaluateClassifier (Classifier, Instances).
 \end_layout
 
 \end_body

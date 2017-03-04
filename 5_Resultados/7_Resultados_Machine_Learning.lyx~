@@ -96,7 +96,85 @@ Resultados preliminares del Aprendizaje Automático.
 \end_layout
 
 \begin_layout Subsection
-Resultados sin un limite inferior permitido
+Resultados sin un limite inferior de Porcentaje de Aciertos permitido
+\end_layout
+
+\begin_layout Standard
+Aqui iran los graficos.
+\end_layout
+
+\begin_layout Subsubsection
+Conteo de cantidad de productos analizados
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Recursos/cantidad_prod_cross.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Conteo de la cantidad de productos analizados.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Recursos/cantidad_prod_split.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Conteo de la cantidad de productos analizados.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
@@ -108,7 +186,7 @@ Resultados del porcentaje de aciertos
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -132,10 +210,6 @@ PACI para Cross k-fold Stratified.
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -146,7 +220,7 @@ PACI para Cross k-fold Stratified.
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -180,7 +254,7 @@ PACI para Percentage Split.
 \end_layout
 
 \begin_layout Subsubsection
-Resultados de valores máximos
+Resultados de valores máximos alcanzados
 \end_layout
 
 \begin_layout Standard
@@ -188,7 +262,7 @@ Resultados de valores máximos
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -227,7 +301,7 @@ Max para Cross k-fold Stratified.
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -258,7 +332,7 @@ Max para Percentage Split.
 \end_layout
 
 \begin_layout Subsubsection
-Resultados de valores mínimos
+Resultados de valores mínimos alcanzados
 \end_layout
 
 \begin_layout Standard
@@ -266,7 +340,7 @@ Resultados de valores mínimos
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -301,7 +375,7 @@ Min para Cross k-fold Stratified.
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -340,7 +414,7 @@ Conteo de clasificadores para Cross k-fold Stratified
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -378,7 +452,7 @@ Cross Stratified mensual.
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -413,7 +487,7 @@ Cross Stratified quincenal.
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -452,7 +526,7 @@ Conteo de clasificadores para Percentage Split
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -483,7 +557,7 @@ Percentage Split mensual.
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -518,7 +592,7 @@ Percentage Split quincenal.
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -549,19 +623,252 @@ Percentage Split semanal.
 \end_layout
 
 \begin_layout Subsection
-Resultados con un límite inferior ZeroR
+Resultados con un limite inferior de Porcentaje de Aciertos del 90%
+\end_layout
+
+\begin_layout Standard
+Aqui iran los graficos.
+\end_layout
+
+\begin_layout Subsubsection
+Conteo de cantidad de productos analizados
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Recursos/cantidad_prod_cross90.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Conteo de la cantidad de productos analizados.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Recursos/cantidad_prod_split90.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
 Resultados del porcentaje de aciertos
 \end_layout
 
-\begin_layout Subsubsection
-Resultados de valores máximos
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Recursos/PACI Cross Stratified90.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+PACI para Cross k-fold Stratified.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Recursos/PACI Split90.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+PACI para Percentage Split.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
-Resultados de valores mínimos
+Resultados de valores mínimos alcanzados
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Recursos/cross_min90.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Min para Cross k-fold Stratified.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Recursos/split_min90.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Min para Percentage Split.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Conteo de clasificadores para Cross k-fold Stratified
+\end_layout
+
+\begin_layout Subsubsection
+Conteo de clasificadores para Percentage Split
 \end_layout
 
 \end_body

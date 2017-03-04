@@ -136,7 +136,7 @@ target "raulkvd@gmail.com"
 , D.
  Pinto-Roa
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
 D.
@@ -173,6 +173,27 @@ target "vazquez.aditardo@gmail.com"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Abstract
+
+\lang english
+In this work we treat the problem of designing a survivable optical network
+ for static multicast traffic, subject to node fails.
+ Given a set of multicast requeriments we propose an algorithm based on
+ MOACO which tries to find the best design of the network, as well as the
+ primary and back-up multicast trees, with protection against node fails.
+ The algorithm simultaneously minimizes the design cost and the maximum
+ optical delay.
+ The experimental results over different instances show the benefits of
+ three protection approaches based on the total or partial network reconfigurati
+on.
+\end_layout
+
+\begin_layout Keywords
+
+\lang american
+optical networks, optical layer multicast, node failure, protection.
 \end_layout
 
 \begin_layout Standard
