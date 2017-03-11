@@ -99,12 +99,12 @@ Resultados preliminares del Aprendizaje Automático.
 Resultados sin un limite inferior de Porcentaje de Aciertos permitido
 \end_layout
 
-\begin_layout Standard
-Aqui iran los graficos.
-\end_layout
-
 \begin_layout Subsubsection
 Conteo de cantidad de productos analizados
+\end_layout
+
+\begin_layout Standard
+.....
 \end_layout
 
 \begin_layout Standard
@@ -175,6 +175,10 @@ Conteo de la cantidad de productos analizados.
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+......
 \end_layout
 
 \begin_layout Subsubsection
@@ -626,10 +630,6 @@ Percentage Split semanal.
 Resultados con un limite inferior de Porcentaje de Aciertos del 90%
 \end_layout
 
-\begin_layout Standard
-Aqui iran los graficos.
-\end_layout
-
 \begin_layout Subsubsection
 Conteo de cantidad de productos analizados
 \end_layout
@@ -677,10 +677,6 @@ sideways false
 status collapsed
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Graphics
 	filename Recursos/cantidad_prod_split90.png
 	scale 50
@@ -691,7 +687,7 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
+Conteo de la cantidad de productos analizados.
 \end_layout
 
 \end_inset
@@ -718,10 +714,6 @@ placement H
 wide false
 sideways false
 status collapsed
-
-\begin_layout Plain Layout
-
-\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -756,10 +748,6 @@ PACI para Cross k-fold Stratified.
 wide false
 sideways false
 status collapsed
-
-\begin_layout Plain Layout
-
-\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -861,14 +849,6 @@ Min para Percentage Split.
 \end_inset
 
 
-\end_layout
-
-\begin_layout Subsubsection
-Conteo de clasificadores para Cross k-fold Stratified
-\end_layout
-
-\begin_layout Subsubsection
-Conteo de clasificadores para Percentage Split
 \end_layout
 
 \end_body

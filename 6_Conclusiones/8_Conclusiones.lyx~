@@ -5,9 +5,21 @@
 \save_transient_properties true
 \origin unavailable
 \textclass IEEEtran
+\begin_preamble
+% Bibliografia en español
+\usepackage[fixlanguage]{babelbib}
+\selectbiblanguage{spanish}
+
+% Bibliografia
+\usepackage[authoryear,square,sort]{natbib}
+\bibliographystyle{plainnat}
+\bibpunct{[}{]}{,}{a}{}{;}
+\renewcommand\cite{\citep}
+\end_preamble
+\options journal
 \use_default_options true
 \maintain_unincluded_children false
-\language english
+\language spanish
 \language_package default
 \inputencoding auto
 \fontencoding global
@@ -24,13 +36,13 @@
 \graphics default
 \default_output_format default
 \output_sync 0
-\bibtex_command default
+\bibtex_command bibtex
 \index_command default
-\paperfontsize default
+\paperfontsize 12
 \spacing single
 \use_hyperref false
 \papersize default
-\use_geometry false
+\use_geometry true
 \use_package amsmath 1
 \use_package amssymb 1
 \use_package cancel 1
@@ -54,6 +66,10 @@
 \shortcut idx
 \color #008000
 \end_index
+\leftmargin 2.5cm
+\topmargin 2.5cm
+\rightmargin 1.5cm
+\bottommargin 2cm
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation indent
@@ -72,11 +88,7 @@
 \begin_body
 
 \begin_layout Section
-Resultados de Business Intelligence
-\end_layout
 
-\begin_layout Standard
-Es necesario resultados para BI?
 \end_layout
 
 \end_body

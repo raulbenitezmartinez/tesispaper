@@ -90,7 +90,7 @@
 \begin_layout Title
 
 \lang english
-“Automatización en la toma de decisiones para la reposición de stock a través
+“Automatización de toma de decisiones en la gestión de compras a través
  de un modelo basado en Business Intelligence y Machine Learning”
 \end_layout
 
@@ -178,22 +178,20 @@ target "vazquez.aditardo@gmail.com"
 \begin_layout Abstract
 
 \lang english
-In this work we treat the problem of designing a survivable optical network
- for static multicast traffic, subject to node fails.
- Given a set of multicast requeriments we propose an algorithm based on
- MOACO which tries to find the best design of the network, as well as the
- primary and back-up multicast trees, with protection against node fails.
- The algorithm simultaneously minimizes the design cost and the maximum
- optical delay.
- The experimental results over different instances show the benefits of
- three protection approaches based on the total or partial network reconfigurati
-on.
+La gestión de compras, en empresas retail por ejemplo, supone uno de los
+ procesos más importante que tienen impacto económico en toda la organización.
+ Dentro de la gestión de compras, una decisión que se debe tomar regularmente
+ es acerca del volumen a adquirir de un producto determinado, o si realmente
+ hay que seguir adquiriendo un producto específico y en qué cantidades.
+ En este trabajo se propone un modelo que ayuda a tomar la decisión del
+ volumen de compra de cualquier producto en stock, un modelo basado en business
+ intelligence y machine learning.
 \end_layout
 
 \begin_layout Keywords
 
 \lang american
-optical networks, optical layer multicast, node failure, protection.
+retail, business intelligence, machine learning.
 \end_layout
 
 \begin_layout Standard

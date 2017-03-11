@@ -90,7 +90,7 @@
 \begin_layout Title
 
 \lang english
-“Automatización en la toma de decisiones para la reposición de stock a través
+“Automatización de toma de decisiones en la gestión de compras a través
  de un modelo basado en Business Intelligence y Machine Learning”
 \end_layout
 
@@ -136,7 +136,7 @@ target "raulkvd@gmail.com"
 , D.
  Pinto-Roa
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
 D.
@@ -173,6 +173,25 @@ target "vazquez.aditardo@gmail.com"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Abstract
+
+\lang english
+La gestión de compras, en empresas retail por ejemplo, supone uno de los
+ procesos más importante que tienen impacto económico en toda la organización.
+ Dentro de la gestión de compras, una decisión que se debe tomar regularmente
+ es acerca del volumen a adquirir de un producto determinado, o si realmente
+ hay que seguir adquiriendo un producto específico y en qué cantidades.
+ En este trabajo se propone un modelo que ayuda a tomar la decisión del
+ volumen de compra de cualquier producto en stock, un modelo basado en business
+ intelligence y machine learning.
+\end_layout
+
+\begin_layout Keywords
+
+\lang american
+optical networks, optical layer multicast, node failure, protection.
 \end_layout
 
 \begin_layout Standard
