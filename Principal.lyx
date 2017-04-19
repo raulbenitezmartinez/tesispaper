@@ -90,7 +90,7 @@
 \begin_layout Title
 
 \lang english
-“Automatización de toma de decisiones en la gestión de compras a través
+“Automatización en la toma de decisiones de compra de productos a través
  de un modelo basado en Business Intelligence y Machine Learning”
 \end_layout
 
@@ -180,9 +180,9 @@ target "vazquez.aditardo@gmail.com"
 \lang english
 La gestión de compras, en empresas retail por ejemplo, supone uno de los
  procesos más importante que tienen impacto económico en toda la organización.
- Dentro de la gestión de compras, una decisión que se debe tomar regularmente
- es acerca del volumen a adquirir de un producto determinado, o si realmente
- hay que seguir adquiriendo un producto específico y en qué cantidades.
+ Dentro de la gestión de compras, una decisión que regularmente se debe
+ tomar es acerca del volumen a adquirir de un producto determinado, o si
+ realmente hay que seguir adquiriendo un producto específico y en qué cantidades.
  En este trabajo se propone un modelo que ayuda a tomar la decisión del
  volumen de compra de cualquier producto en stock, un modelo basado en business
  intelligence y machine learning.

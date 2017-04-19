@@ -844,8 +844,8 @@ Medida-F o Puntuación-F (F-Measure o F-Score): En el análisis estadístico
  La Puntuación-F puede interpretarse como un promedio ponderado de la precisión
  y sensibilidad, donde alcanza su mejor valor en 1 y el peor en 0.
  En WEKA el método fMeasure(int classIndex) calcula la Puntuación-F con
- respecto a una clase en particular.
- Esto se define como: 2 * recall * precision / recall + precision.
+ respecto a una clase en particular, esto se define como: 2 * recall * precision
+ / recall + precision.
 \end_layout
 
 \begin_layout Subsubsection
